@@ -1,0 +1,7 @@
+v 4
+file . "Register_a.vhd" "814970c9bf7e916003a22276e1e2808455888cb9" "20240620192300.685":
+  entity register_a at 1( 0) + 0 on 11;
+  architecture rtl of register_a at 31( 349) + 0 on 12;
+file . "Register_a_tb.vhd" "b36e5c27c15e21278f0753f2c0b9976095b70bc7" "20240620194333.380":
+  entity register_a_tb at 1( 0) + 0 on 25;
+  architecture teste of register_a_tb at 8( 114) + 0 on 26;

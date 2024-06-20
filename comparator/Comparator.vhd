@@ -3,7 +3,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity Comparator is 
     generic(
-        DATA_WIDTH : natural := 4
+        DATA_WIDTH : natural := 5
     );
     port(
         a	: in std_logic_vector(DATA_WIDTH-1 downto 0);

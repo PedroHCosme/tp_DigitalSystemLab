@@ -1,0 +1,117 @@
+$date
+  Thu Jun 20 16:43:39 2024
+$end
+$version
+  GHDL v0
+$end
+$timescale
+  1 fs
+$end
+$scope module standard $end
+$upscope $end
+$scope module std_logic_1164 $end
+$upscope $end
+$scope module numeric_std $end
+$upscope $end
+$scope module register_a_tb $end
+$var reg 8 ! d[7:0] $end
+$var reg 8 " q[7:0] $end
+$var reg 1 # sync_load $end
+$var reg 1 $ async_reset $end
+$var reg 1 % clock $end
+$scope module register_a_instance $end
+$var reg 1 & clock $end
+$var reg 8 ' d[7:0] $end
+$var reg 1 ( async_reset $end
+$var reg 1 ) sync_load $end
+$var reg 8 * q[7:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+b00000000 !
+bUUUUUUUU "
+0#
+0$
+0%
+0&
+b00000000 '
+0(
+0)
+bUUUUUUUU *
+#5000000
+1%
+1&
+#10000000
+b00000000 "
+1#
+1$
+0%
+0&
+1(
+1)
+b00000000 *
+#15000000
+1%
+1&
+#20000000
+b10000000 !
+0%
+0&
+b10000000 '
+#25000000
+1%
+1&
+#30000000
+0#
+0$
+0%
+0&
+0(
+0)
+#35000000
+1%
+1&
+#40000000
+b01110000 !
+0%
+0&
+b01110000 '
+#45000000
+1%
+1&
+#50000000
+0%
+0&
+#55000000
+1%
+1&
+#60000000
+b01000000 !
+0%
+0&
+b01000000 '
+#65000000
+1%
+1&
+#70000000
+0%
+0&
+#75000000
+1%
+1&
+#80000000
+0%
+0&
+#85000000
+1%
+1&
+#90000000
+0%
+0&
+#95000000
+1%
+1&
+#100000000
+0%
+0&

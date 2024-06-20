@@ -1,0 +1,76 @@
+$date
+  Thu Jun 20 11:40:33 2024
+$end
+$version
+  GHDL v0
+$end
+$timescale
+  1 fs
+$end
+$scope module standard $end
+$upscope $end
+$scope module std_logic_1164 $end
+$upscope $end
+$scope module comparator_tb $end
+$var reg 5 ! a[4:0] $end
+$var reg 5 " b[4:0] $end
+$var reg 1 # maior $end
+$var reg 1 $ igual $end
+$var reg 1 % menor $end
+$scope module uut $end
+$var reg 5 & a[4:0] $end
+$var reg 5 ' b[4:0] $end
+$var reg 1 ( maior $end
+$var reg 1 ) menor $end
+$var reg 1 * igual $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+b00100 !
+b01000 "
+0#
+0$
+1%
+b00100 &
+b01000 '
+0(
+1)
+0*
+#10000000
+b01100 !
+b00110 "
+1#
+0%
+b01100 &
+b00110 '
+1(
+0)
+#20000000
+b01010 !
+b01010 "
+0#
+1$
+b01010 &
+b01010 '
+0(
+1*
+#30000000
+b00010 !
+b01110 "
+0$
+1%
+b00010 &
+b01110 '
+1)
+0*
+#40000000
+b01111 !
+b00000 "
+1#
+0%
+b01111 &
+b00000 '
+1(
+0)
+#50000000

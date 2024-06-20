@@ -1,32 +1,51 @@
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
+LIBRARY IEEE;
+use ieee.std_logic_1164.all;
 
--- Entity declaration
 entity Register_a is
-    generic (
-        DATA_WIDTH : integer := 8  -- Default data width of 8 bits
-    );
-    port (
-        clk : in std_logic;  -- Clock
-        rst : in std_logic;  -- Reset
-        en  : in std_logic;  -- Enable
-        data_in : in std_logic_vector(DATA_WIDTH - 1 downto 0);  -- Input data
-        data_out : out std_logic_vector(DATA_WIDTH - 1 downto 0)  -- Output data
-    );
+	generic
+
+	(
+
+			DATA_WIDTH : natural := 8
+
+	);
+
+	port( 
+
+			
+
+			clock: in std_logic;
+
+			D: in std_logic_vector((DATA_WIDTH -1) downto 0);
+
+			async_reset : in std_logic;
+
+			sync_load : in std_logic;
+
+			Q: out std_logic_vector((DATA_WIDTH -1) downto 0)
+
+	    );
+
 end Register_a;
 
--- Architecture declaration
-architecture Behavioral of Register_a is
+architecture RTL of Register_a is
+
 begin
-    -- Process block for register logic
-    process (clk, rst)
-    begin
-        if rising_edge(clk) then  -- Trigger on the rising edge of the clock
-            if rst = '1' then  -- Synchronous reset
-                data_out <= (others => '0');
-            elsif en = '1' then  -- Check if enable is high
-                data_out <= data_in;  -- Transfer input to output
-            end if;
-        end if;
-    end process;  -- End of process block
-end Behavioral;  -- End of architecture
+
+	process(clock, async_reset, sync_load)
+
+	begin
+
+		if(async_reset ='1') then
+
+			Q <= (others => '0');
+
+		elsif (clock='1' and clock'event and sync_load= '1') then
+
+			Q <= D;
+
+		end if;
+
+	end process;
+
+end RTL;

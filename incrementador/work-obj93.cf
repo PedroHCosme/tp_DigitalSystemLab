@@ -1,0 +1,7 @@
+v 4
+file . "incrementador.vhd" "a7919cff6735175c20840a5a436c9d958fbf457a" "20240620131503.246":
+  entity incrementador at 1( 0) + 0 on 11;
+  architecture rtl of incrementador at 17( 356) + 0 on 12;
+file . "incrementador_tb.vhd" "f1befbc5b69f866a885bee1b54c72819747b8a8b" "20240620131609.597":
+  entity incrementador_tb at 1( 0) + 0 on 15;
+  architecture behavior of incrementador_tb at 8( 120) + 0 on 16;
