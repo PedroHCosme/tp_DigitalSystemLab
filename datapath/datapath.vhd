@@ -46,97 +46,132 @@ architecture rtl of datapath is
 
     component reg8 is 
         port(
-            CLOCK: in std_logic; --clock
-            D: in std_logic_vector(7 downto 0); -- register in
-            ASYNC_RESET : in std_logic; -- reset
-            SYNC_LOAD : in std_logic; -- load
-            Q: out std_logic_vector(7 downto 0) --register out
-        );
-    end reg8;
-    
-    component incrementer is
-        port(
-            C_IN  : in  std_logic_vector(7 downto 0);  -- Input signal
-            C_OUT : out std_logic_vector(7 downto 0)   -- Output signal
-        );
-    end incrementer;
-    
-    component comparator8bits is
-        port(
-            A  : in  std_logic_vector(7 downto 0);  -- Input signal
-            B  : in  std_logic_vector(7 downto 0);  -- Input signal
-            EQ : out std_logic;  -- Output signal
-            GT : out std_logic;  -- Output signal
-            LT : out std_logic   -- Output signal
-        );
-    end comparator8bits;
-    
-    component comparator5bits is
-        port(
-            A  : in  std_logic_vector(4 downto 0);  -- Input signal
-            B  : in  std_logic_vector(4 downto 0);  -- Input signal
-            EQ : out std_logic;  -- Output signal
-            GT : out std_logic;  -- Output signal
-            LT : out std_logic   -- Output signal
-        );
-    end comparator5bits;
-    
-    component bcd is 
-        port (
-            C_IN: in std_logic_vector(3 downto 0);
-            C_OUT: out std_logic_vector(6 downto 0)
-        );
-    end bcd;
-    
-    signal SEN_LUM_REG_OUT, LED_REG_OUT : STD_LOGIC_VECTOR(7 downto 0);
-    
-    begin
-        reg8_LEDS: reg8 port map(
-            CLOCK => CLOCK,
-            D => SEN_LUM,
-            ASYNC_RESET => '0', -- Corrected to constant '0' for example purposes
-            SYNC_LOAD => '1', -- Corrected to constant '1' for example purposes
-            Q => LED_REG_OUT
-        );
-        reg8_SEN_LUM: reg8 port map(
-            CLOCK => CLOCK,
-            D => LEDS_IN,
-            ASYNC_RESET => '0', -- Corrected to constant '0' for example purposes
-            SYNC_LOAD => '1', -- Corrected to constant '1' for example purposes
-            Q => SEN_LUM_REG_OUT
-        );
-        incrementer_LEDS: incrementer port map(
-            C_IN => INCR_LEDS,
-            C_OUT => LEDS_OUT
-        );
 
-        comparator8bits_HOUP: comparator8bits port map(
-            A => SEN_LUM_REG_OUT,
-            B => TIME_SEVEN,
-            EQ => open,
-            GT => HOUP,
-            LT => open
+			CLOCK: in std_logic; --clock
+			D: in std_logic_vector(7 downto 0); -- register in
+			ASYNC_RESET : in std_logic; -- reset
+			SYNC_LOAD : in std_logic; -- load
+			Q: out std_logic_vector(7 downto 0) --register out
         );
+        end reg8;
+    
+        component incrementer is
+            port(
+                C_IN  : in  std_logic_vector(7 downto 0);  -- Input signal
+                C_OUT : out std_logic_vector(7 downto 0)   -- Output signal
+            );
+            end incrementer;
+        
+        component comparator8bits is
+            port(
+                A  : in  std_logic_vector(7 downto 0);  -- Input signal
+                B  : in  std_logic_vector(7 downto 0);  -- Input signal
+                EQ : out std_logic;  -- Output signal
+                GT : out std_logic;  -- Output signal
+                LT : out std_logic   -- Output signal
+            );
+            end comparator8bits;
+        
+        component comparator5bits is
+            port(
+                A  : in  std_logic_vector(4 downto 0);  -- Input signal
+                B  : in  std_logic_vector(4 downto 0);  -- Input signal
+                EQ : out std_logic;  -- Output signal
+                GT : out std_logic;  -- Output signal
+                LT : out std_logic   -- Output signal
+            );
+            end comparator5bits;
+        
+        component bcd is 
+            port (
+                C_IN: in std_logic_vector(3 downto 0);
+                C_OUT: out std_logic_vector(6 downto 0)
+            );
+            end bcd;
+        
+        signal SEN_LUM_REG_OUT, LED_REG_OUT : STD_LOGIC_VECTOR(7 downto 0);
+        
+        begin
+            reg8_LEDS: reg8 port map(
+                CLOCK => CLOCK,
+                D => SEN_LUM,
+                ASYNC_RESET => RESET_SIGNAL,
+                SYNC_LOAD => LOAD_SIGNAL,
+                Q => LED_REG_OUT
+            );
+            reg8_SEN_LUM: reg8 port map(
+                CLOCK => CLOCK,
+                D => LEDS_IN,
+                ASYNC_RESET => RESET_SIGNAL,
+                SYNC_LOAD => LOAD_SIGNAL,
+                Q => SEN_LUM_REG_OUT
+            );
+            comptime00 : comparator5bits port map(
+                A => ENTR_HOR(5 downto 0),
+                B => "00000",
+                EQ => EQ,
+                GT => H0UP,
+                LT => H0DOWN
+            );
+            comptime07 : comparator5bits port map(
+                A => ENTR_HOR(5 downto 0),
+                B => "00111",
+                EQ => EQ,
+                GT => HOUP,
+                LT => H0DOWN
+            );
+            comptime12 : comparator5bits port map(
+                A => ENTR_HOR(5 downto 0),
+                B => "01100",
+                EQ => EQ,
+                GT => H18UP,
+                LT => H18DOWN
+            );
+            comptime18 : comparator5bits port map(
+                A => ENTR_HOR(5 downto 0),
+                B => "10010",
+                EQ => EQ,
+                GT => H24UP,
+                LT => H24DOWN
+            );
+            comptime24: comparator5bits port map(
+                A => ENTR_HOR(5 downto 0),
+                B => "11000",
+                EQ => EQ,
+                GT => H24UP,
+                LT => H24DOWN
+            );
+            complum20: comparator8bits port map(
+                A => SEN_LUM_REG_OUT,
+                B => "00001110",
+                EQ => EQ,
+                GT => L20UP,
+                LT => LT
+            );
+            complum180: comparator8bits port map(
+                A => SEN_LUM_REG_OUT,
+                B => "10110100",
+                EQ => EQ,
+                GT => L180UP,
+                LT => L240DOWN
+            );
+            complum240: comparator8bits port map(
+                A => SEN_LUM_REG_OUT,
+                B => "11110000",
+                EQ => EQ,
+                GT => GT,
+                LT => L240DOWN
+            );
+            reg_leds: reg8 port map(
+                CLOCK => CLOCK,
+                D => LEDS_IN,
+                ASYNC_RESET => RESET_SIGNAL,
+                SYNC_LOAD => LOAD_SIGNAL,
+                Q => LEDS_OUT
+            );
+            incrementer_leds: incrementer port map(
+                C_IN => INCR_LEDS,
+                C_OUT => LEDS_OUT
+            );
 
-        comparator5bits_L180DOWN: comparator5bits port map(
-            A => SEN_LUM_REG_OUT(7 downto 3),
-            B => "10110",
-            EQ => open,
-            GT => open,
-            LT => L180DOWN
-        );
-        comparator5bits_L180UP: comparator5bits port map(
-            A => SEN_LUM_REG_OUT(7 downto 3),
-            B => "10110",
-            EQ => open,
-            GT => L180UP,
-            LT => open
-        );
-        comparator5bits_L240DOWN: comparator5bits port map(
-            A => SEN_LUM_REG_OUT(7 downto 3),
-            B => "11110",
-            EQ => open,
-            GT => open,
-            LT => L240DOWN
-        );
-end rtl; -- rtl
+end rtl ; -- rtl
