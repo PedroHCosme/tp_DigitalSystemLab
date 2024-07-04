@@ -8,6 +8,10 @@ entity datapath is
         CLOCK       : in  STD_LOGIC; -- Clock signal
         TIMER       : in  STD_LOGIC; -- Timer signal
 
+        -- Reset and Load Signals
+        RESET_SIGNAL: in  STD_LOGIC; -- Asynchronous reset signal
+        LOAD_SIGNAL : in  STD_LOGIC; -- Synchronous load signal
+
         -- LED Control Signals
         INCR_LED    : in  STD_LOGIC; -- Increment LED signal
         LEDS_ON     : in  STD_LOGIC; -- LEDs on signal
