@@ -1,0 +1,1304 @@
+TimeQuest Timing Analyzer report for sistema_unificadov2
+Thu Jul  4 08:34:16 2024
+Quartus II 32-bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow 1200mV 85C Model Fmax Summary
+  6. Timing Closure Recommendations
+  7. Slow 1200mV 85C Model Setup Summary
+  8. Slow 1200mV 85C Model Hold Summary
+  9. Slow 1200mV 85C Model Recovery Summary
+ 10. Slow 1200mV 85C Model Removal Summary
+ 11. Slow 1200mV 85C Model Minimum Pulse Width Summary
+ 12. Slow 1200mV 85C Model Setup: 'CLOCK'
+ 13. Slow 1200mV 85C Model Setup: 'ENTR_HOR[0]'
+ 14. Slow 1200mV 85C Model Hold: 'ENTR_HOR[0]'
+ 15. Slow 1200mV 85C Model Hold: 'CLOCK'
+ 16. Slow 1200mV 85C Model Minimum Pulse Width: 'CLOCK'
+ 17. Slow 1200mV 85C Model Minimum Pulse Width: 'ENTR_HOR[0]'
+ 18. Setup Times
+ 19. Hold Times
+ 20. Clock to Output Times
+ 21. Minimum Clock to Output Times
+ 22. Slow 1200mV 85C Model Metastability Report
+ 23. Slow 1200mV 0C Model Fmax Summary
+ 24. Slow 1200mV 0C Model Setup Summary
+ 25. Slow 1200mV 0C Model Hold Summary
+ 26. Slow 1200mV 0C Model Recovery Summary
+ 27. Slow 1200mV 0C Model Removal Summary
+ 28. Slow 1200mV 0C Model Minimum Pulse Width Summary
+ 29. Slow 1200mV 0C Model Setup: 'CLOCK'
+ 30. Slow 1200mV 0C Model Setup: 'ENTR_HOR[0]'
+ 31. Slow 1200mV 0C Model Hold: 'ENTR_HOR[0]'
+ 32. Slow 1200mV 0C Model Hold: 'CLOCK'
+ 33. Slow 1200mV 0C Model Minimum Pulse Width: 'CLOCK'
+ 34. Slow 1200mV 0C Model Minimum Pulse Width: 'ENTR_HOR[0]'
+ 35. Setup Times
+ 36. Hold Times
+ 37. Clock to Output Times
+ 38. Minimum Clock to Output Times
+ 39. Slow 1200mV 0C Model Metastability Report
+ 40. Fast 1200mV 0C Model Setup Summary
+ 41. Fast 1200mV 0C Model Hold Summary
+ 42. Fast 1200mV 0C Model Recovery Summary
+ 43. Fast 1200mV 0C Model Removal Summary
+ 44. Fast 1200mV 0C Model Minimum Pulse Width Summary
+ 45. Fast 1200mV 0C Model Setup: 'CLOCK'
+ 46. Fast 1200mV 0C Model Setup: 'ENTR_HOR[0]'
+ 47. Fast 1200mV 0C Model Hold: 'ENTR_HOR[0]'
+ 48. Fast 1200mV 0C Model Hold: 'CLOCK'
+ 49. Fast 1200mV 0C Model Minimum Pulse Width: 'CLOCK'
+ 50. Fast 1200mV 0C Model Minimum Pulse Width: 'ENTR_HOR[0]'
+ 51. Setup Times
+ 52. Hold Times
+ 53. Clock to Output Times
+ 54. Minimum Clock to Output Times
+ 55. Fast 1200mV 0C Model Metastability Report
+ 56. Multicorner Timing Analysis Summary
+ 57. Setup Times
+ 58. Hold Times
+ 59. Clock to Output Times
+ 60. Minimum Clock to Output Times
+ 61. Board Trace Model Assignments
+ 62. Input Transition Times
+ 63. Signal Integrity Metrics (Slow 1200mv 0c Model)
+ 64. Signal Integrity Metrics (Slow 1200mv 85c Model)
+ 65. Signal Integrity Metrics (Fast 1200mv 0c Model)
+ 66. Setup Transfers
+ 67. Hold Transfers
+ 68. Report TCCS
+ 69. Report RSKM
+ 70. Unconstrained Paths
+ 71. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                       ;
++--------------------+----------------------------------------------------+
+; Quartus II Version ; Version 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
+; Revision Name      ; sistema_unificadov2                                ;
+; Device Family      ; Cyclone IV GX                                      ;
+; Device Name        ; EP4CGX15BF14C6                                     ;
+; Timing Models      ; Final                                              ;
+; Delay Model        ; Combined                                           ;
+; Rise/Fall Delays   ; Enabled                                            ;
++--------------------+----------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 8      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                   ;
++-------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------------+
+; Clock Name  ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets         ;
++-------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------------+
+; CLOCK       ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { CLOCK }       ;
+; ENTR_HOR[0] ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { ENTR_HOR[0] } ;
++-------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Fmax Summary                                                                        ;
++-----------+-----------------+-------------+---------------------------------------------------------------+
+; Fmax      ; Restricted Fmax ; Clock Name  ; Note                                                          ;
++-----------+-----------------+-------------+---------------------------------------------------------------+
+; 772.8 MHz ; 250.0 MHz       ; ENTR_HOR[0] ; limit due to minimum period restriction (max I/O toggle rate) ;
++-----------+-----------------+-------------+---------------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
+----------------------------------
+; Timing Closure Recommendations ;
+----------------------------------
+HTML report is unavailable in plain text report export.
+
+
++--------------------------------------+
+; Slow 1200mV 85C Model Setup Summary  ;
++-------------+--------+---------------+
+; Clock       ; Slack  ; End Point TNS ;
++-------------+--------+---------------+
+; CLOCK       ; -2.451 ; -9.474        ;
+; ENTR_HOR[0] ; -0.147 ; -0.262        ;
++-------------+--------+---------------+
+
+
++--------------------------------------+
+; Slow 1200mV 85C Model Hold Summary   ;
++-------------+--------+---------------+
+; Clock       ; Slack  ; End Point TNS ;
++-------------+--------+---------------+
+; ENTR_HOR[0] ; -0.678 ; -2.230        ;
+; CLOCK       ; 2.807  ; 0.000         ;
++-------------+--------+---------------+
+
+
+------------------------------------------
+; Slow 1200mV 85C Model Recovery Summary ;
+------------------------------------------
+No paths to report.
+
+
+-----------------------------------------
+; Slow 1200mV 85C Model Removal Summary ;
+-----------------------------------------
+No paths to report.
+
+
++---------------------------------------------------+
+; Slow 1200mV 85C Model Minimum Pulse Width Summary ;
++-------------+--------+----------------------------+
+; Clock       ; Slack  ; End Point TNS              ;
++-------------+--------+----------------------------+
+; CLOCK       ; -3.000 ; -8.000                     ;
+; ENTR_HOR[0] ; -3.000 ; -3.000                     ;
++-------------+--------+----------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Setup: 'CLOCK'                                                                                                                                                                             ;
++--------+--------------------------------------------------------------------+--------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                                          ; To Node                                                      ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------------------------------------------------------+--------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -2.451 ; controladora:controladora_inst|proximo_estado.MANUAL_420           ; controladora:controladora_inst|estado_atual.MANUAL           ; ENTR_HOR[0]  ; CLOCK       ; 0.500        ; -2.835     ; 0.091      ;
+; -2.359 ; controladora:controladora_inst|proximo_estado.MODO_NOTURNO_565     ; controladora:controladora_inst|estado_atual.MODO_NOTURNO     ; ENTR_HOR[0]  ; CLOCK       ; 0.500        ; -2.743     ; 0.091      ;
+; -2.333 ; controladora:controladora_inst|proximo_estado.ERRO_594             ; controladora:controladora_inst|estado_atual.ERRO             ; ENTR_HOR[0]  ; CLOCK       ; 0.500        ; -2.717     ; 0.091      ;
+; -2.331 ; controladora:controladora_inst|proximo_estado.DETECTA_PRESENCA_623 ; controladora:controladora_inst|estado_atual.DETECTA_PRESENCA ; ENTR_HOR[0]  ; CLOCK       ; 0.500        ; -2.715     ; 0.091      ;
++--------+--------------------------------------------------------------------+--------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Setup: 'ENTR_HOR[0]'                                                                                                                                                                       ;
++--------+--------------------------------------------------------------+--------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                                    ; To Node                                                            ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------------------------------------------------+--------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -0.147 ; ENTR_HOR[0]                                                  ; controladora:controladora_inst|proximo_estado.MODO_NOTURNO_565     ; ENTR_HOR[0]  ; ENTR_HOR[0] ; 0.500        ; 4.796      ; 4.373      ;
+; -0.115 ; ENTR_HOR[0]                                                  ; controladora:controladora_inst|proximo_estado.DETECTA_PRESENCA_623 ; ENTR_HOR[0]  ; ENTR_HOR[0] ; 0.500        ; 4.794      ; 4.534      ;
+; -0.020 ; controladora:controladora_inst|estado_atual.MODO_NOTURNO     ; controladora:controladora_inst|proximo_estado.DETECTA_PRESENCA_623 ; CLOCK        ; ENTR_HOR[0] ; 0.500        ; 2.472      ; 2.097      ;
+; 0.007  ; controladora:controladora_inst|estado_atual.DETECTA_PRESENCA ; controladora:controladora_inst|proximo_estado.MODO_NOTURNO_565     ; CLOCK        ; ENTR_HOR[0] ; 0.500        ; 2.447      ; 1.850      ;
+; 0.028  ; controladora:controladora_inst|estado_atual.MODO_NOTURNO     ; controladora:controladora_inst|proximo_estado.MANUAL_420           ; CLOCK        ; ENTR_HOR[0] ; 0.500        ; 2.587      ; 2.174      ;
+; 0.123  ; ENTR_HOR[0]                                                  ; controladora:controladora_inst|proximo_estado.MANUAL_420           ; ENTR_HOR[0]  ; ENTR_HOR[0] ; 0.500        ; 4.909      ; 4.421      ;
+; 0.140  ; controladora:controladora_inst|estado_atual.INIT             ; controladora:controladora_inst|proximo_estado.MANUAL_420           ; CLOCK        ; ENTR_HOR[0] ; 0.500        ; 2.560      ; 2.035      ;
+; 0.143  ; controladora:controladora_inst|estado_atual.DETECTA_PRESENCA ; controladora:controladora_inst|proximo_estado.MANUAL_420           ; CLOCK        ; ENTR_HOR[0] ; 0.500        ; 2.560      ; 2.032      ;
+; 0.165  ; controladora:controladora_inst|estado_atual.DETECTA_PRESENCA ; controladora:controladora_inst|proximo_estado.DETECTA_PRESENCA_623 ; CLOCK        ; ENTR_HOR[0] ; 0.500        ; 2.445      ; 1.885      ;
+; 0.199  ; ENTR_HOR[0]                                                  ; controladora:controladora_inst|proximo_estado.MODO_NOTURNO_565     ; ENTR_HOR[0]  ; ENTR_HOR[0] ; 1.000        ; 4.796      ; 4.527      ;
+; 0.213  ; ENTR_HOR[0]                                                  ; controladora:controladora_inst|proximo_estado.DETECTA_PRESENCA_623 ; ENTR_HOR[0]  ; ENTR_HOR[0] ; 1.000        ; 4.794      ; 4.706      ;
+; 0.288  ; controladora:controladora_inst|estado_atual.MANUAL           ; controladora:controladora_inst|proximo_estado.ERRO_594             ; CLOCK        ; ENTR_HOR[0] ; 0.500        ; 2.447      ; 2.044      ;
+; 0.332  ; controladora:controladora_inst|estado_atual.ERRO             ; controladora:controladora_inst|proximo_estado.ERRO_594             ; CLOCK        ; ENTR_HOR[0] ; 0.500        ; 2.447      ; 2.000      ;
+; 0.341  ; controladora:controladora_inst|estado_atual.INIT             ; controladora:controladora_inst|proximo_estado.ERRO_594             ; CLOCK        ; ENTR_HOR[0] ; 0.500        ; 2.447      ; 1.991      ;
+; 0.463  ; ENTR_HOR[0]                                                  ; controladora:controladora_inst|proximo_estado.MANUAL_420           ; ENTR_HOR[0]  ; ENTR_HOR[0] ; 1.000        ; 4.909      ; 4.581      ;
++--------+--------------------------------------------------------------+--------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Hold: 'ENTR_HOR[0]'                                                                                                                                                                        ;
++--------+--------------------------------------------------------------+--------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                                    ; To Node                                                            ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------------------------------------------------+--------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -0.678 ; ENTR_HOR[0]                                                  ; controladora:controladora_inst|proximo_estado.MANUAL_420           ; ENTR_HOR[0]  ; ENTR_HOR[0] ; 0.000        ; 5.094      ; 4.416      ;
+; -0.636 ; ENTR_HOR[0]                                                  ; controladora:controladora_inst|proximo_estado.MODO_NOTURNO_565     ; ENTR_HOR[0]  ; ENTR_HOR[0] ; 0.000        ; 4.976      ; 4.340      ;
+; -0.542 ; controladora:controladora_inst|estado_atual.DETECTA_PRESENCA ; controladora:controladora_inst|proximo_estado.MANUAL_420           ; CLOCK        ; ENTR_HOR[0] ; -0.500       ; 2.835      ; 1.833      ;
+; -0.504 ; controladora:controladora_inst|estado_atual.INIT             ; controladora:controladora_inst|proximo_estado.MANUAL_420           ; CLOCK        ; ENTR_HOR[0] ; -0.500       ; 2.835      ; 1.871      ;
+; -0.500 ; ENTR_HOR[0]                                                  ; controladora:controladora_inst|proximo_estado.DETECTA_PRESENCA_623 ; ENTR_HOR[0]  ; ENTR_HOR[0] ; 0.000        ; 4.974      ; 4.474      ;
+; -0.496 ; controladora:controladora_inst|estado_atual.DETECTA_PRESENCA ; controladora:controladora_inst|proximo_estado.MODO_NOTURNO_565     ; CLOCK        ; ENTR_HOR[0] ; -0.500       ; 2.717      ; 1.761      ;
+; -0.466 ; controladora:controladora_inst|estado_atual.DETECTA_PRESENCA ; controladora:controladora_inst|proximo_estado.DETECTA_PRESENCA_623 ; CLOCK        ; ENTR_HOR[0] ; -0.500       ; 2.715      ; 1.789      ;
+; -0.462 ; controladora:controladora_inst|estado_atual.MODO_NOTURNO     ; controladora:controladora_inst|proximo_estado.MANUAL_420           ; CLOCK        ; ENTR_HOR[0] ; -0.500       ; 2.861      ; 1.939      ;
+; -0.416 ; controladora:controladora_inst|estado_atual.ERRO             ; controladora:controladora_inst|proximo_estado.ERRO_594             ; CLOCK        ; ENTR_HOR[0] ; -0.500       ; 2.717      ; 1.841      ;
+; -0.407 ; controladora:controladora_inst|estado_atual.INIT             ; controladora:controladora_inst|proximo_estado.ERRO_594             ; CLOCK        ; ENTR_HOR[0] ; -0.500       ; 2.717      ; 1.850      ;
+; -0.371 ; controladora:controladora_inst|estado_atual.MANUAL           ; controladora:controladora_inst|proximo_estado.ERRO_594             ; CLOCK        ; ENTR_HOR[0] ; -0.500       ; 2.717      ; 1.886      ;
+; -0.358 ; ENTR_HOR[0]                                                  ; controladora:controladora_inst|proximo_estado.MANUAL_420           ; ENTR_HOR[0]  ; ENTR_HOR[0] ; -0.500       ; 5.094      ; 4.256      ;
+; -0.320 ; controladora:controladora_inst|estado_atual.MODO_NOTURNO     ; controladora:controladora_inst|proximo_estado.DETECTA_PRESENCA_623 ; CLOCK        ; ENTR_HOR[0] ; -0.500       ; 2.741      ; 1.961      ;
+; -0.288 ; ENTR_HOR[0]                                                  ; controladora:controladora_inst|proximo_estado.MODO_NOTURNO_565     ; ENTR_HOR[0]  ; ENTR_HOR[0] ; -0.500       ; 4.976      ; 4.208      ;
+; -0.177 ; ENTR_HOR[0]                                                  ; controladora:controladora_inst|proximo_estado.DETECTA_PRESENCA_623 ; ENTR_HOR[0]  ; ENTR_HOR[0] ; -0.500       ; 4.974      ; 4.317      ;
++--------+--------------------------------------------------------------+--------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Hold: 'CLOCK'                                                                                                                                                                             ;
++-------+--------------------------------------------------------------------+--------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                                          ; To Node                                                      ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------------------------------------------------------+--------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 2.807 ; controladora:controladora_inst|proximo_estado.DETECTA_PRESENCA_623 ; controladora:controladora_inst|estado_atual.DETECTA_PRESENCA ; ENTR_HOR[0]  ; CLOCK       ; -0.500       ; -2.445     ; 0.059      ;
+; 2.809 ; controladora:controladora_inst|proximo_estado.ERRO_594             ; controladora:controladora_inst|estado_atual.ERRO             ; ENTR_HOR[0]  ; CLOCK       ; -0.500       ; -2.447     ; 0.059      ;
+; 2.836 ; controladora:controladora_inst|proximo_estado.MODO_NOTURNO_565     ; controladora:controladora_inst|estado_atual.MODO_NOTURNO     ; ENTR_HOR[0]  ; CLOCK       ; -0.500       ; -2.474     ; 0.059      ;
+; 2.922 ; controladora:controladora_inst|proximo_estado.MANUAL_420           ; controladora:controladora_inst|estado_atual.MANUAL           ; ENTR_HOR[0]  ; CLOCK       ; -0.500       ; -2.560     ; 0.059      ;
++-------+--------------------------------------------------------------------+--------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Minimum Pulse Width: 'CLOCK'                                                                                            ;
++--------+--------------+----------------+------------------+-------+------------+--------------------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                                                       ;
++--------+--------------+----------------+------------------+-------+------------+--------------------------------------------------------------+
+; -3.000 ; 1.000        ; 4.000          ; Port Rate        ; CLOCK ; Rise       ; CLOCK                                                        ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; CLOCK ; Rise       ; controladora:controladora_inst|estado_atual.DETECTA_PRESENCA ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; CLOCK ; Rise       ; controladora:controladora_inst|estado_atual.ERRO             ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; CLOCK ; Rise       ; controladora:controladora_inst|estado_atual.INIT             ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; CLOCK ; Rise       ; controladora:controladora_inst|estado_atual.MANUAL           ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; CLOCK ; Rise       ; controladora:controladora_inst|estado_atual.MODO_NOTURNO     ;
+; 0.159  ; 0.343        ; 0.184          ; Low Pulse Width  ; CLOCK ; Rise       ; controladora:controladora_inst|estado_atual.MODO_NOTURNO     ;
+; 0.214  ; 0.398        ; 0.184          ; Low Pulse Width  ; CLOCK ; Rise       ; controladora:controladora_inst|estado_atual.DETECTA_PRESENCA ;
+; 0.214  ; 0.398        ; 0.184          ; Low Pulse Width  ; CLOCK ; Rise       ; controladora:controladora_inst|estado_atual.ERRO             ;
+; 0.214  ; 0.398        ; 0.184          ; Low Pulse Width  ; CLOCK ; Rise       ; controladora:controladora_inst|estado_atual.INIT             ;
+; 0.214  ; 0.398        ; 0.184          ; Low Pulse Width  ; CLOCK ; Rise       ; controladora:controladora_inst|estado_atual.MANUAL           ;
+; 0.321  ; 0.321        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; controladora_inst|estado_atual.MODO_NOTURNO|clk              ;
+; 0.326  ; 0.326        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; CLOCK~input|o                                                ;
+; 0.337  ; 0.337        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; CLOCK~inputclkctrl|inclk[0]                                  ;
+; 0.337  ; 0.337        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; CLOCK~inputclkctrl|outclk                                    ;
+; 0.374  ; 0.374        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; controladora_inst|estado_atual.DETECTA_PRESENCA|clk          ;
+; 0.374  ; 0.374        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; controladora_inst|estado_atual.ERRO|clk                      ;
+; 0.374  ; 0.374        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; controladora_inst|estado_atual.INIT|clk                      ;
+; 0.374  ; 0.374        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; controladora_inst|estado_atual.MANUAL|clk                    ;
+; 0.386  ; 0.602        ; 0.216          ; High Pulse Width ; CLOCK ; Rise       ; controladora:controladora_inst|estado_atual.DETECTA_PRESENCA ;
+; 0.386  ; 0.602        ; 0.216          ; High Pulse Width ; CLOCK ; Rise       ; controladora:controladora_inst|estado_atual.ERRO             ;
+; 0.386  ; 0.602        ; 0.216          ; High Pulse Width ; CLOCK ; Rise       ; controladora:controladora_inst|estado_atual.INIT             ;
+; 0.386  ; 0.602        ; 0.216          ; High Pulse Width ; CLOCK ; Rise       ; controladora:controladora_inst|estado_atual.MANUAL           ;
+; 0.439  ; 0.655        ; 0.216          ; High Pulse Width ; CLOCK ; Rise       ; controladora:controladora_inst|estado_atual.MODO_NOTURNO     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; CLOCK~input|i                                                ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; CLOCK~input|i                                                ;
+; 0.624  ; 0.624        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; controladora_inst|estado_atual.DETECTA_PRESENCA|clk          ;
+; 0.624  ; 0.624        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; controladora_inst|estado_atual.ERRO|clk                      ;
+; 0.624  ; 0.624        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; controladora_inst|estado_atual.INIT|clk                      ;
+; 0.624  ; 0.624        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; controladora_inst|estado_atual.MANUAL|clk                    ;
+; 0.662  ; 0.662        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; CLOCK~inputclkctrl|inclk[0]                                  ;
+; 0.662  ; 0.662        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; CLOCK~inputclkctrl|outclk                                    ;
+; 0.674  ; 0.674        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; CLOCK~input|o                                                ;
+; 0.679  ; 0.679        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; controladora_inst|estado_atual.MODO_NOTURNO|clk              ;
++--------+--------------+----------------+------------------+-------+------------+--------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Minimum Pulse Width: 'ENTR_HOR[0]'                                                                                                  ;
++--------+--------------+----------------+------------------+-------------+------------+--------------------------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock       ; Clock Edge ; Target                                                             ;
++--------+--------------+----------------+------------------+-------------+------------+--------------------------------------------------------------------+
+; -3.000 ; 1.000        ; 4.000          ; Port Rate        ; ENTR_HOR[0] ; Rise       ; ENTR_HOR[0]                                                        ;
+; 0.319  ; 0.319        ; 0.000          ; Low Pulse Width  ; ENTR_HOR[0] ; Rise       ; controladora_inst|Selector0~0|combout                              ;
+; 0.320  ; 0.320        ; 0.000          ; Low Pulse Width  ; ENTR_HOR[0] ; Rise       ; controladora_inst|Selector0~0|datac                                ;
+; 0.326  ; 0.326        ; 0.000          ; Low Pulse Width  ; ENTR_HOR[0] ; Rise       ; ENTR_HOR[0]~input|o                                                ;
+; 0.327  ; 0.327        ; 0.000          ; Low Pulse Width  ; ENTR_HOR[0] ; Rise       ; controladora_inst|combinational~5|datad                            ;
+; 0.331  ; 0.331        ; 0.000          ; Low Pulse Width  ; ENTR_HOR[0] ; Rise       ; controladora_inst|combinational~3|datad                            ;
+; 0.346  ; 0.346        ; 0.000          ; Low Pulse Width  ; ENTR_HOR[0] ; Rise       ; controladora_inst|Selector0~0clkctrl|inclk[0]                      ;
+; 0.346  ; 0.346        ; 0.000          ; Low Pulse Width  ; ENTR_HOR[0] ; Rise       ; controladora_inst|Selector0~0clkctrl|outclk                        ;
+; 0.347  ; 0.347        ; 0.000          ; Low Pulse Width  ; ENTR_HOR[0] ; Rise       ; controladora_inst|combinational~5|combout                          ;
+; 0.351  ; 0.351        ; 0.000          ; Low Pulse Width  ; ENTR_HOR[0] ; Rise       ; controladora_inst|combinational~3|combout                          ;
+; 0.362  ; 0.362        ; 0.000          ; Low Pulse Width  ; ENTR_HOR[0] ; Rise       ; controladora_inst|proximo_estado.DETECTA_PRESENCA_623|datad        ;
+; 0.362  ; 0.362        ; 0.000          ; Low Pulse Width  ; ENTR_HOR[0] ; Rise       ; controladora_inst|proximo_estado.ERRO_594|datad                    ;
+; 0.362  ; 0.362        ; 0.000          ; Low Pulse Width  ; ENTR_HOR[0] ; Rise       ; controladora_inst|proximo_estado.MODO_NOTURNO_565|datad            ;
+; 0.363  ; 0.363        ; 0.000          ; High Pulse Width ; ENTR_HOR[0] ; Fall       ; controladora:controladora_inst|proximo_estado.MANUAL_420           ;
+; 0.364  ; 0.364        ; 0.000          ; Low Pulse Width  ; ENTR_HOR[0] ; Rise       ; controladora_inst|proximo_estado.MANUAL_420|datac                  ;
+; 0.382  ; 0.382        ; 0.000          ; High Pulse Width ; ENTR_HOR[0] ; Fall       ; controladora:controladora_inst|proximo_estado.DETECTA_PRESENCA_623 ;
+; 0.382  ; 0.382        ; 0.000          ; High Pulse Width ; ENTR_HOR[0] ; Fall       ; controladora:controladora_inst|proximo_estado.ERRO_594             ;
+; 0.382  ; 0.382        ; 0.000          ; High Pulse Width ; ENTR_HOR[0] ; Fall       ; controladora:controladora_inst|proximo_estado.MODO_NOTURNO_565     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ENTR_HOR[0] ; Rise       ; ENTR_HOR[0]~input|i                                                ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ENTR_HOR[0] ; Rise       ; ENTR_HOR[0]~input|i                                                ;
+; 0.618  ; 0.618        ; 0.000          ; Low Pulse Width  ; ENTR_HOR[0] ; Fall       ; controladora:controladora_inst|proximo_estado.DETECTA_PRESENCA_623 ;
+; 0.618  ; 0.618        ; 0.000          ; Low Pulse Width  ; ENTR_HOR[0] ; Fall       ; controladora:controladora_inst|proximo_estado.ERRO_594             ;
+; 0.618  ; 0.618        ; 0.000          ; Low Pulse Width  ; ENTR_HOR[0] ; Fall       ; controladora:controladora_inst|proximo_estado.MODO_NOTURNO_565     ;
+; 0.636  ; 0.636        ; 0.000          ; High Pulse Width ; ENTR_HOR[0] ; Rise       ; controladora_inst|proximo_estado.MANUAL_420|datac                  ;
+; 0.637  ; 0.637        ; 0.000          ; Low Pulse Width  ; ENTR_HOR[0] ; Fall       ; controladora:controladora_inst|proximo_estado.MANUAL_420           ;
+; 0.638  ; 0.638        ; 0.000          ; High Pulse Width ; ENTR_HOR[0] ; Rise       ; controladora_inst|proximo_estado.DETECTA_PRESENCA_623|datad        ;
+; 0.638  ; 0.638        ; 0.000          ; High Pulse Width ; ENTR_HOR[0] ; Rise       ; controladora_inst|proximo_estado.ERRO_594|datad                    ;
+; 0.638  ; 0.638        ; 0.000          ; High Pulse Width ; ENTR_HOR[0] ; Rise       ; controladora_inst|proximo_estado.MODO_NOTURNO_565|datad            ;
+; 0.649  ; 0.649        ; 0.000          ; High Pulse Width ; ENTR_HOR[0] ; Rise       ; controladora_inst|combinational~3|combout                          ;
+; 0.652  ; 0.652        ; 0.000          ; High Pulse Width ; ENTR_HOR[0] ; Rise       ; controladora_inst|combinational~5|combout                          ;
+; 0.653  ; 0.653        ; 0.000          ; High Pulse Width ; ENTR_HOR[0] ; Rise       ; controladora_inst|Selector0~0clkctrl|inclk[0]                      ;
+; 0.653  ; 0.653        ; 0.000          ; High Pulse Width ; ENTR_HOR[0] ; Rise       ; controladora_inst|Selector0~0clkctrl|outclk                        ;
+; 0.669  ; 0.669        ; 0.000          ; High Pulse Width ; ENTR_HOR[0] ; Rise       ; controladora_inst|combinational~3|datad                            ;
+; 0.672  ; 0.672        ; 0.000          ; High Pulse Width ; ENTR_HOR[0] ; Rise       ; controladora_inst|combinational~5|datad                            ;
+; 0.674  ; 0.674        ; 0.000          ; High Pulse Width ; ENTR_HOR[0] ; Rise       ; ENTR_HOR[0]~input|o                                                ;
+; 0.678  ; 0.678        ; 0.000          ; High Pulse Width ; ENTR_HOR[0] ; Rise       ; controladora_inst|Selector0~0|datac                                ;
+; 0.679  ; 0.679        ; 0.000          ; High Pulse Width ; ENTR_HOR[0] ; Rise       ; controladora_inst|Selector0~0|combout                              ;
++--------+--------------+----------------+------------------+-------------+------------+--------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------+
+; Setup Times                                                               ;
++--------------+-------------+-------+-------+------------+-----------------+
+; Data Port    ; Clock Port  ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++--------------+-------------+-------+-------+------------+-----------------+
+; ENTR_HOR[*]  ; ENTR_HOR[0] ; 3.292 ; 3.699 ; Fall       ; ENTR_HOR[0]     ;
+;  ENTR_HOR[0] ; ENTR_HOR[0] ; 0.627 ; 0.781 ; Fall       ; ENTR_HOR[0]     ;
+;  ENTR_HOR[1] ; ENTR_HOR[0] ; 2.903 ; 3.347 ; Fall       ; ENTR_HOR[0]     ;
+;  ENTR_HOR[2] ; ENTR_HOR[0] ; 3.292 ; 3.699 ; Fall       ; ENTR_HOR[0]     ;
+;  ENTR_HOR[3] ; ENTR_HOR[0] ; 3.059 ; 3.492 ; Fall       ; ENTR_HOR[0]     ;
+;  ENTR_HOR[4] ; ENTR_HOR[0] ; 2.638 ; 3.044 ; Fall       ; ENTR_HOR[0]     ;
+; INT_MAN      ; ENTR_HOR[0] ; 1.879 ; 2.316 ; Fall       ; ENTR_HOR[0]     ;
+; SEN_PRE      ; ENTR_HOR[0] ; 0.900 ; 1.318 ; Fall       ; ENTR_HOR[0]     ;
++--------------+-------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------------+
+; Hold Times                                                                  ;
++--------------+-------------+--------+--------+------------+-----------------+
+; Data Port    ; Clock Port  ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++--------------+-------------+--------+--------+------------+-----------------+
+; ENTR_HOR[*]  ; ENTR_HOR[0] ; 0.838  ; 0.678  ; Fall       ; ENTR_HOR[0]     ;
+;  ENTR_HOR[0] ; ENTR_HOR[0] ; 0.838  ; 0.678  ; Fall       ; ENTR_HOR[0]     ;
+;  ENTR_HOR[1] ; ENTR_HOR[0] ; -1.345 ; -1.785 ; Fall       ; ENTR_HOR[0]     ;
+;  ENTR_HOR[2] ; ENTR_HOR[0] ; -1.377 ; -1.791 ; Fall       ; ENTR_HOR[0]     ;
+;  ENTR_HOR[3] ; ENTR_HOR[0] ; -0.929 ; -1.365 ; Fall       ; ENTR_HOR[0]     ;
+;  ENTR_HOR[4] ; ENTR_HOR[0] ; -0.576 ; -1.021 ; Fall       ; ENTR_HOR[0]     ;
+; INT_MAN      ; ENTR_HOR[0] ; 0.344  ; -0.055 ; Fall       ; ENTR_HOR[0]     ;
+; SEN_PRE      ; ENTR_HOR[0] ; 0.535  ; 0.141  ; Fall       ; ENTR_HOR[0]     ;
++--------------+-------------+--------+--------+------------+-----------------+
+
+
++------------------------------------------------------------------------------+
+; Clock to Output Times                                                        ;
++------------------+------------+-------+-------+------------+-----------------+
+; Data Port        ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------------+------------+-------+-------+------------+-----------------+
+; ALERTA           ; CLOCK      ; 6.685 ; 6.854 ; Rise       ; CLOCK           ;
+; DISPL_STATUS[*]  ; CLOCK      ; 7.593 ; 7.707 ; Rise       ; CLOCK           ;
+;  DISPL_STATUS[0] ; CLOCK      ; 6.699 ; 6.621 ; Rise       ; CLOCK           ;
+;  DISPL_STATUS[2] ; CLOCK      ; 6.533 ; 6.457 ; Rise       ; CLOCK           ;
+;  DISPL_STATUS[3] ; CLOCK      ; 7.593 ; 7.707 ; Rise       ; CLOCK           ;
++------------------+------------+-------+-------+------------+-----------------+
+
+
++------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                ;
++------------------+------------+-------+-------+------------+-----------------+
+; Data Port        ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------------+------------+-------+-------+------------+-----------------+
+; ALERTA           ; CLOCK      ; 6.124 ; 6.317 ; Rise       ; CLOCK           ;
+; DISPL_STATUS[*]  ; CLOCK      ; 6.232 ; 6.187 ; Rise       ; CLOCK           ;
+;  DISPL_STATUS[0] ; CLOCK      ; 6.232 ; 6.187 ; Rise       ; CLOCK           ;
+;  DISPL_STATUS[2] ; CLOCK      ; 6.317 ; 6.240 ; Rise       ; CLOCK           ;
+;  DISPL_STATUS[3] ; CLOCK      ; 7.032 ; 7.169 ; Rise       ; CLOCK           ;
++------------------+------------+-------+-------+------------+-----------------+
+
+
+----------------------------------------------
+; Slow 1200mV 85C Model Metastability Report ;
+----------------------------------------------
+No synchronizer chains to report.
+
+
++------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Fmax Summary                                                                          ;
++------------+-----------------+-------------+---------------------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name  ; Note                                                          ;
++------------+-----------------+-------------+---------------------------------------------------------------+
+; 701.26 MHz ; 250.0 MHz       ; ENTR_HOR[0] ; limit due to minimum period restriction (max I/O toggle rate) ;
++------------+-----------------+-------------+---------------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++--------------------------------------+
+; Slow 1200mV 0C Model Setup Summary   ;
++-------------+--------+---------------+
+; Clock       ; Slack  ; End Point TNS ;
++-------------+--------+---------------+
+; CLOCK       ; -2.125 ; -8.177        ;
+; ENTR_HOR[0] ; -0.213 ; -0.382        ;
++-------------+--------+---------------+
+
+
++--------------------------------------+
+; Slow 1200mV 0C Model Hold Summary    ;
++-------------+--------+---------------+
+; Clock       ; Slack  ; End Point TNS ;
++-------------+--------+---------------+
+; ENTR_HOR[0] ; -0.562 ; -1.847        ;
+; CLOCK       ; 2.544  ; 0.000         ;
++-------------+--------+---------------+
+
+
+-----------------------------------------
+; Slow 1200mV 0C Model Recovery Summary ;
+-----------------------------------------
+No paths to report.
+
+
+----------------------------------------
+; Slow 1200mV 0C Model Removal Summary ;
+----------------------------------------
+No paths to report.
+
+
++--------------------------------------------------+
+; Slow 1200mV 0C Model Minimum Pulse Width Summary ;
++-------------+--------+---------------------------+
+; Clock       ; Slack  ; End Point TNS             ;
++-------------+--------+---------------------------+
+; CLOCK       ; -3.000 ; -8.000                    ;
+; ENTR_HOR[0] ; -3.000 ; -3.000                    ;
++-------------+--------+---------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Setup: 'CLOCK'                                                                                                                                                                              ;
++--------+--------------------------------------------------------------------+--------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                                          ; To Node                                                      ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------------------------------------------------------+--------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -2.125 ; controladora:controladora_inst|proximo_estado.MANUAL_420           ; controladora:controladora_inst|estado_atual.MANUAL           ; ENTR_HOR[0]  ; CLOCK       ; 0.500        ; -2.522     ; 0.078      ;
+; -2.022 ; controladora:controladora_inst|proximo_estado.MODO_NOTURNO_565     ; controladora:controladora_inst|estado_atual.MODO_NOTURNO     ; ENTR_HOR[0]  ; CLOCK       ; 0.500        ; -2.419     ; 0.078      ;
+; -2.016 ; controladora:controladora_inst|proximo_estado.ERRO_594             ; controladora:controladora_inst|estado_atual.ERRO             ; ENTR_HOR[0]  ; CLOCK       ; 0.500        ; -2.413     ; 0.078      ;
+; -2.014 ; controladora:controladora_inst|proximo_estado.DETECTA_PRESENCA_623 ; controladora:controladora_inst|estado_atual.DETECTA_PRESENCA ; ENTR_HOR[0]  ; CLOCK       ; 0.500        ; -2.411     ; 0.078      ;
++--------+--------------------------------------------------------------------+--------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Setup: 'ENTR_HOR[0]'                                                                                                                                                                        ;
++--------+--------------------------------------------------------------+--------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                                    ; To Node                                                            ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------------------------------------------------+--------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -0.213 ; ENTR_HOR[0]                                                  ; controladora:controladora_inst|proximo_estado.MODO_NOTURNO_565     ; ENTR_HOR[0]  ; ENTR_HOR[0] ; 0.500        ; 4.300      ; 4.041      ;
+; -0.169 ; ENTR_HOR[0]                                                  ; controladora:controladora_inst|proximo_estado.DETECTA_PRESENCA_623 ; ENTR_HOR[0]  ; ENTR_HOR[0] ; 0.500        ; 4.298      ; 4.186      ;
+; -0.004 ; controladora:controladora_inst|estado_atual.DETECTA_PRESENCA ; controladora:controladora_inst|proximo_estado.MODO_NOTURNO_565     ; CLOCK        ; ENTR_HOR[0] ; 0.500        ; 2.177      ; 1.689      ;
+; 0.000  ; controladora:controladora_inst|estado_atual.MODO_NOTURNO     ; controladora:controladora_inst|proximo_estado.DETECTA_PRESENCA_623 ; CLOCK        ; ENTR_HOR[0] ; 0.500        ; 2.181      ; 1.880      ;
+; 0.048  ; controladora:controladora_inst|estado_atual.MODO_NOTURNO     ; controladora:controladora_inst|proximo_estado.MANUAL_420           ; CLOCK        ; ENTR_HOR[0] ; 0.500        ; 2.286      ; 1.947      ;
+; 0.082  ; ENTR_HOR[0]                                                  ; controladora:controladora_inst|proximo_estado.MANUAL_420           ; ENTR_HOR[0]  ; ENTR_HOR[0] ; 0.500        ; 4.403      ; 4.050      ;
+; 0.130  ; controladora:controladora_inst|estado_atual.INIT             ; controladora:controladora_inst|proximo_estado.MANUAL_420           ; CLOCK        ; ENTR_HOR[0] ; 0.500        ; 2.280      ; 1.859      ;
+; 0.159  ; controladora:controladora_inst|estado_atual.DETECTA_PRESENCA ; controladora:controladora_inst|proximo_estado.DETECTA_PRESENCA_623 ; CLOCK        ; ENTR_HOR[0] ; 0.500        ; 2.175      ; 1.715      ;
+; 0.186  ; controladora:controladora_inst|estado_atual.DETECTA_PRESENCA ; controladora:controladora_inst|proximo_estado.MANUAL_420           ; CLOCK        ; ENTR_HOR[0] ; 0.500        ; 2.280      ; 1.803      ;
+; 0.257  ; ENTR_HOR[0]                                                  ; controladora:controladora_inst|proximo_estado.MODO_NOTURNO_565     ; ENTR_HOR[0]  ; ENTR_HOR[0] ; 1.000        ; 4.300      ; 4.071      ;
+; 0.266  ; controladora:controladora_inst|estado_atual.MANUAL           ; controladora:controladora_inst|proximo_estado.ERRO_594             ; CLOCK        ; ENTR_HOR[0] ; 0.500        ; 2.177      ; 1.850      ;
+; 0.301  ; ENTR_HOR[0]                                                  ; controladora:controladora_inst|proximo_estado.DETECTA_PRESENCA_623 ; ENTR_HOR[0]  ; ENTR_HOR[0] ; 1.000        ; 4.298      ; 4.216      ;
+; 0.308  ; controladora:controladora_inst|estado_atual.ERRO             ; controladora:controladora_inst|proximo_estado.ERRO_594             ; CLOCK        ; ENTR_HOR[0] ; 0.500        ; 2.177      ; 1.808      ;
+; 0.316  ; controladora:controladora_inst|estado_atual.INIT             ; controladora:controladora_inst|proximo_estado.ERRO_594             ; CLOCK        ; ENTR_HOR[0] ; 0.500        ; 2.177      ; 1.800      ;
+; 0.484  ; ENTR_HOR[0]                                                  ; controladora:controladora_inst|proximo_estado.MANUAL_420           ; ENTR_HOR[0]  ; ENTR_HOR[0] ; 1.000        ; 4.403      ; 4.148      ;
++--------+--------------------------------------------------------------+--------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Hold: 'ENTR_HOR[0]'                                                                                                                                                                         ;
++--------+--------------------------------------------------------------+--------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                                    ; To Node                                                            ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------------------------------------------------+--------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -0.562 ; ENTR_HOR[0]                                                  ; controladora:controladora_inst|proximo_estado.MANUAL_420           ; ENTR_HOR[0]  ; ENTR_HOR[0] ; 0.000        ; 4.565      ; 4.003      ;
+; -0.535 ; ENTR_HOR[0]                                                  ; controladora:controladora_inst|proximo_estado.MODO_NOTURNO_565     ; ENTR_HOR[0]  ; ENTR_HOR[0] ; 0.000        ; 4.456      ; 3.921      ;
+; -0.446 ; ENTR_HOR[0]                                                  ; controladora:controladora_inst|proximo_estado.DETECTA_PRESENCA_623 ; ENTR_HOR[0]  ; ENTR_HOR[0] ; 0.000        ; 4.454      ; 4.008      ;
+; -0.385 ; controladora:controladora_inst|estado_atual.INIT             ; controladora:controladora_inst|proximo_estado.MANUAL_420           ; CLOCK        ; ENTR_HOR[0] ; -0.500       ; 2.522      ; 1.677      ;
+; -0.384 ; controladora:controladora_inst|estado_atual.DETECTA_PRESENCA ; controladora:controladora_inst|proximo_estado.MANUAL_420           ; CLOCK        ; ENTR_HOR[0] ; -0.500       ; 2.522      ; 1.678      ;
+; -0.366 ; controladora:controladora_inst|estado_atual.DETECTA_PRESENCA ; controladora:controladora_inst|proximo_estado.MODO_NOTURNO_565     ; CLOCK        ; ENTR_HOR[0] ; -0.500       ; 2.413      ; 1.587      ;
+; -0.337 ; controladora:controladora_inst|estado_atual.DETECTA_PRESENCA ; controladora:controladora_inst|proximo_estado.DETECTA_PRESENCA_623 ; CLOCK        ; ENTR_HOR[0] ; -0.500       ; 2.411      ; 1.614      ;
+; -0.336 ; controladora:controladora_inst|estado_atual.MODO_NOTURNO     ; controladora:controladora_inst|proximo_estado.MANUAL_420           ; CLOCK        ; ENTR_HOR[0] ; -0.500       ; 2.528      ; 1.732      ;
+; -0.304 ; controladora:controladora_inst|estado_atual.ERRO             ; controladora:controladora_inst|proximo_estado.ERRO_594             ; CLOCK        ; ENTR_HOR[0] ; -0.500       ; 2.413      ; 1.649      ;
+; -0.281 ; controladora:controladora_inst|estado_atual.INIT             ; controladora:controladora_inst|proximo_estado.ERRO_594             ; CLOCK        ; ENTR_HOR[0] ; -0.500       ; 2.413      ; 1.672      ;
+; -0.267 ; controladora:controladora_inst|estado_atual.MANUAL           ; controladora:controladora_inst|proximo_estado.ERRO_594             ; CLOCK        ; ENTR_HOR[0] ; -0.500       ; 2.413      ; 1.686      ;
+; -0.186 ; ENTR_HOR[0]                                                  ; controladora:controladora_inst|proximo_estado.MANUAL_420           ; ENTR_HOR[0]  ; ENTR_HOR[0] ; -0.500       ; 4.565      ; 3.899      ;
+; -0.161 ; controladora:controladora_inst|estado_atual.MODO_NOTURNO     ; controladora:controladora_inst|proximo_estado.DETECTA_PRESENCA_623 ; CLOCK        ; ENTR_HOR[0] ; -0.500       ; 2.417      ; 1.796      ;
+; -0.118 ; ENTR_HOR[0]                                                  ; controladora:controladora_inst|proximo_estado.MODO_NOTURNO_565     ; ENTR_HOR[0]  ; ENTR_HOR[0] ; -0.500       ; 4.456      ; 3.858      ;
+; 0.010  ; ENTR_HOR[0]                                                  ; controladora:controladora_inst|proximo_estado.DETECTA_PRESENCA_623 ; ENTR_HOR[0]  ; ENTR_HOR[0] ; -0.500       ; 4.454      ; 3.984      ;
++--------+--------------------------------------------------------------+--------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Hold: 'CLOCK'                                                                                                                                                                              ;
++-------+--------------------------------------------------------------------+--------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                                          ; To Node                                                      ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------------------------------------------------------+--------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 2.544 ; controladora:controladora_inst|proximo_estado.DETECTA_PRESENCA_623 ; controladora:controladora_inst|estado_atual.DETECTA_PRESENCA ; ENTR_HOR[0]  ; CLOCK       ; -0.500       ; -2.175     ; 0.053      ;
+; 2.546 ; controladora:controladora_inst|proximo_estado.ERRO_594             ; controladora:controladora_inst|estado_atual.ERRO             ; ENTR_HOR[0]  ; CLOCK       ; -0.500       ; -2.177     ; 0.053      ;
+; 2.552 ; controladora:controladora_inst|proximo_estado.MODO_NOTURNO_565     ; controladora:controladora_inst|estado_atual.MODO_NOTURNO     ; ENTR_HOR[0]  ; CLOCK       ; -0.500       ; -2.183     ; 0.053      ;
+; 2.649 ; controladora:controladora_inst|proximo_estado.MANUAL_420           ; controladora:controladora_inst|estado_atual.MANUAL           ; ENTR_HOR[0]  ; CLOCK       ; -0.500       ; -2.280     ; 0.053      ;
++-------+--------------------------------------------------------------------+--------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Minimum Pulse Width: 'CLOCK'                                                                                             ;
++--------+--------------+----------------+------------------+-------+------------+--------------------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                                                       ;
++--------+--------------+----------------+------------------+-------+------------+--------------------------------------------------------------+
+; -3.000 ; 1.000        ; 4.000          ; Port Rate        ; CLOCK ; Rise       ; CLOCK                                                        ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; CLOCK ; Rise       ; controladora:controladora_inst|estado_atual.DETECTA_PRESENCA ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; CLOCK ; Rise       ; controladora:controladora_inst|estado_atual.ERRO             ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; CLOCK ; Rise       ; controladora:controladora_inst|estado_atual.INIT             ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; CLOCK ; Rise       ; controladora:controladora_inst|estado_atual.MANUAL           ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; CLOCK ; Rise       ; controladora:controladora_inst|estado_atual.MODO_NOTURNO     ;
+; 0.154  ; 0.338        ; 0.184          ; Low Pulse Width  ; CLOCK ; Rise       ; controladora:controladora_inst|estado_atual.MODO_NOTURNO     ;
+; 0.218  ; 0.402        ; 0.184          ; Low Pulse Width  ; CLOCK ; Rise       ; controladora:controladora_inst|estado_atual.DETECTA_PRESENCA ;
+; 0.218  ; 0.402        ; 0.184          ; Low Pulse Width  ; CLOCK ; Rise       ; controladora:controladora_inst|estado_atual.ERRO             ;
+; 0.218  ; 0.402        ; 0.184          ; Low Pulse Width  ; CLOCK ; Rise       ; controladora:controladora_inst|estado_atual.INIT             ;
+; 0.218  ; 0.402        ; 0.184          ; Low Pulse Width  ; CLOCK ; Rise       ; controladora:controladora_inst|estado_atual.MANUAL           ;
+; 0.314  ; 0.314        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; controladora_inst|estado_atual.MODO_NOTURNO|clk              ;
+; 0.344  ; 0.344        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; CLOCK~input|o                                                ;
+; 0.346  ; 0.346        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; CLOCK~inputclkctrl|inclk[0]                                  ;
+; 0.346  ; 0.346        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; CLOCK~inputclkctrl|outclk                                    ;
+; 0.378  ; 0.378        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; controladora_inst|estado_atual.DETECTA_PRESENCA|clk          ;
+; 0.378  ; 0.378        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; controladora_inst|estado_atual.ERRO|clk                      ;
+; 0.378  ; 0.378        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; controladora_inst|estado_atual.INIT|clk                      ;
+; 0.378  ; 0.378        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; controladora_inst|estado_atual.MANUAL|clk                    ;
+; 0.381  ; 0.597        ; 0.216          ; High Pulse Width ; CLOCK ; Rise       ; controladora:controladora_inst|estado_atual.DETECTA_PRESENCA ;
+; 0.381  ; 0.597        ; 0.216          ; High Pulse Width ; CLOCK ; Rise       ; controladora:controladora_inst|estado_atual.ERRO             ;
+; 0.381  ; 0.597        ; 0.216          ; High Pulse Width ; CLOCK ; Rise       ; controladora:controladora_inst|estado_atual.INIT             ;
+; 0.381  ; 0.597        ; 0.216          ; High Pulse Width ; CLOCK ; Rise       ; controladora:controladora_inst|estado_atual.MANUAL           ;
+; 0.445  ; 0.661        ; 0.216          ; High Pulse Width ; CLOCK ; Rise       ; controladora:controladora_inst|estado_atual.MODO_NOTURNO     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; CLOCK~input|i                                                ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; CLOCK~input|i                                                ;
+; 0.621  ; 0.621        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; controladora_inst|estado_atual.DETECTA_PRESENCA|clk          ;
+; 0.621  ; 0.621        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; controladora_inst|estado_atual.ERRO|clk                      ;
+; 0.621  ; 0.621        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; controladora_inst|estado_atual.INIT|clk                      ;
+; 0.621  ; 0.621        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; controladora_inst|estado_atual.MANUAL|clk                    ;
+; 0.654  ; 0.654        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; CLOCK~inputclkctrl|inclk[0]                                  ;
+; 0.654  ; 0.654        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; CLOCK~inputclkctrl|outclk                                    ;
+; 0.656  ; 0.656        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; CLOCK~input|o                                                ;
+; 0.685  ; 0.685        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; controladora_inst|estado_atual.MODO_NOTURNO|clk              ;
++--------+--------------+----------------+------------------+-------+------------+--------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Minimum Pulse Width: 'ENTR_HOR[0]'                                                                                                   ;
++--------+--------------+----------------+------------------+-------------+------------+--------------------------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock       ; Clock Edge ; Target                                                             ;
++--------+--------------+----------------+------------------+-------------+------------+--------------------------------------------------------------------+
+; -3.000 ; 1.000        ; 4.000          ; Port Rate        ; ENTR_HOR[0] ; Rise       ; ENTR_HOR[0]                                                        ;
+; 0.344  ; 0.344        ; 0.000          ; Low Pulse Width  ; ENTR_HOR[0] ; Rise       ; ENTR_HOR[0]~input|o                                                ;
+; 0.361  ; 0.361        ; 0.000          ; Low Pulse Width  ; ENTR_HOR[0] ; Rise       ; controladora_inst|combinational~3|datad                            ;
+; 0.363  ; 0.363        ; 0.000          ; Low Pulse Width  ; ENTR_HOR[0] ; Rise       ; controladora_inst|Selector0~0|datac                                ;
+; 0.363  ; 0.363        ; 0.000          ; Low Pulse Width  ; ENTR_HOR[0] ; Rise       ; controladora_inst|combinational~5|datad                            ;
+; 0.365  ; 0.365        ; 0.000          ; Low Pulse Width  ; ENTR_HOR[0] ; Rise       ; controladora_inst|Selector0~0|combout                              ;
+; 0.383  ; 0.383        ; 0.000          ; Low Pulse Width  ; ENTR_HOR[0] ; Rise       ; controladora_inst|combinational~3|combout                          ;
+; 0.385  ; 0.385        ; 0.000          ; Low Pulse Width  ; ENTR_HOR[0] ; Rise       ; controladora_inst|combinational~5|combout                          ;
+; 0.404  ; 0.404        ; 0.000          ; Low Pulse Width  ; ENTR_HOR[0] ; Rise       ; controladora_inst|Selector0~0clkctrl|inclk[0]                      ;
+; 0.404  ; 0.404        ; 0.000          ; Low Pulse Width  ; ENTR_HOR[0] ; Rise       ; controladora_inst|Selector0~0clkctrl|outclk                        ;
+; 0.429  ; 0.429        ; 0.000          ; Low Pulse Width  ; ENTR_HOR[0] ; Rise       ; controladora_inst|proximo_estado.DETECTA_PRESENCA_623|datad        ;
+; 0.429  ; 0.429        ; 0.000          ; Low Pulse Width  ; ENTR_HOR[0] ; Rise       ; controladora_inst|proximo_estado.ERRO_594|datad                    ;
+; 0.429  ; 0.429        ; 0.000          ; Low Pulse Width  ; ENTR_HOR[0] ; Rise       ; controladora_inst|proximo_estado.MODO_NOTURNO_565|datad            ;
+; 0.430  ; 0.430        ; 0.000          ; Low Pulse Width  ; ENTR_HOR[0] ; Rise       ; controladora_inst|proximo_estado.MANUAL_420|datac                  ;
+; 0.432  ; 0.432        ; 0.000          ; High Pulse Width ; ENTR_HOR[0] ; Fall       ; controladora:controladora_inst|proximo_estado.MANUAL_420           ;
+; 0.451  ; 0.451        ; 0.000          ; High Pulse Width ; ENTR_HOR[0] ; Fall       ; controladora:controladora_inst|proximo_estado.DETECTA_PRESENCA_623 ;
+; 0.451  ; 0.451        ; 0.000          ; High Pulse Width ; ENTR_HOR[0] ; Fall       ; controladora:controladora_inst|proximo_estado.ERRO_594             ;
+; 0.451  ; 0.451        ; 0.000          ; High Pulse Width ; ENTR_HOR[0] ; Fall       ; controladora:controladora_inst|proximo_estado.MODO_NOTURNO_565     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ENTR_HOR[0] ; Rise       ; ENTR_HOR[0]~input|i                                                ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ENTR_HOR[0] ; Rise       ; ENTR_HOR[0]~input|i                                                ;
+; 0.540  ; 0.540        ; 0.000          ; Low Pulse Width  ; ENTR_HOR[0] ; Fall       ; controladora:controladora_inst|proximo_estado.DETECTA_PRESENCA_623 ;
+; 0.540  ; 0.540        ; 0.000          ; Low Pulse Width  ; ENTR_HOR[0] ; Fall       ; controladora:controladora_inst|proximo_estado.ERRO_594             ;
+; 0.540  ; 0.540        ; 0.000          ; Low Pulse Width  ; ENTR_HOR[0] ; Fall       ; controladora:controladora_inst|proximo_estado.MODO_NOTURNO_565     ;
+; 0.562  ; 0.562        ; 0.000          ; Low Pulse Width  ; ENTR_HOR[0] ; Fall       ; controladora:controladora_inst|proximo_estado.MANUAL_420           ;
+; 0.564  ; 0.564        ; 0.000          ; High Pulse Width ; ENTR_HOR[0] ; Rise       ; controladora_inst|proximo_estado.DETECTA_PRESENCA_623|datad        ;
+; 0.564  ; 0.564        ; 0.000          ; High Pulse Width ; ENTR_HOR[0] ; Rise       ; controladora_inst|proximo_estado.ERRO_594|datad                    ;
+; 0.564  ; 0.564        ; 0.000          ; High Pulse Width ; ENTR_HOR[0] ; Rise       ; controladora_inst|proximo_estado.MANUAL_420|datac                  ;
+; 0.564  ; 0.564        ; 0.000          ; High Pulse Width ; ENTR_HOR[0] ; Rise       ; controladora_inst|proximo_estado.MODO_NOTURNO_565|datad            ;
+; 0.591  ; 0.591        ; 0.000          ; High Pulse Width ; ENTR_HOR[0] ; Rise       ; controladora_inst|Selector0~0clkctrl|inclk[0]                      ;
+; 0.591  ; 0.591        ; 0.000          ; High Pulse Width ; ENTR_HOR[0] ; Rise       ; controladora_inst|Selector0~0clkctrl|outclk                        ;
+; 0.610  ; 0.610        ; 0.000          ; High Pulse Width ; ENTR_HOR[0] ; Rise       ; controladora_inst|combinational~5|combout                          ;
+; 0.614  ; 0.614        ; 0.000          ; High Pulse Width ; ENTR_HOR[0] ; Rise       ; controladora_inst|combinational~3|combout                          ;
+; 0.632  ; 0.632        ; 0.000          ; High Pulse Width ; ENTR_HOR[0] ; Rise       ; controladora_inst|Selector0~0|combout                              ;
+; 0.634  ; 0.634        ; 0.000          ; High Pulse Width ; ENTR_HOR[0] ; Rise       ; controladora_inst|Selector0~0|datac                                ;
+; 0.634  ; 0.634        ; 0.000          ; High Pulse Width ; ENTR_HOR[0] ; Rise       ; controladora_inst|combinational~5|datad                            ;
+; 0.638  ; 0.638        ; 0.000          ; High Pulse Width ; ENTR_HOR[0] ; Rise       ; controladora_inst|combinational~3|datad                            ;
+; 0.656  ; 0.656        ; 0.000          ; High Pulse Width ; ENTR_HOR[0] ; Rise       ; ENTR_HOR[0]~input|o                                                ;
++--------+--------------+----------------+------------------+-------------+------------+--------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------+
+; Setup Times                                                               ;
++--------------+-------------+-------+-------+------------+-----------------+
+; Data Port    ; Clock Port  ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++--------------+-------------+-------+-------+------------+-----------------+
+; ENTR_HOR[*]  ; ENTR_HOR[0] ; 2.887 ; 3.292 ; Fall       ; ENTR_HOR[0]     ;
+;  ENTR_HOR[0] ; ENTR_HOR[0] ; 0.693 ; 0.723 ; Fall       ; ENTR_HOR[0]     ;
+;  ENTR_HOR[1] ; ENTR_HOR[0] ; 2.633 ; 2.891 ; Fall       ; ENTR_HOR[0]     ;
+;  ENTR_HOR[2] ; ENTR_HOR[0] ; 2.887 ; 3.292 ; Fall       ; ENTR_HOR[0]     ;
+;  ENTR_HOR[3] ; ENTR_HOR[0] ; 2.771 ; 3.015 ; Fall       ; ENTR_HOR[0]     ;
+;  ENTR_HOR[4] ; ENTR_HOR[0] ; 2.295 ; 2.692 ; Fall       ; ENTR_HOR[0]     ;
+; INT_MAN      ; ENTR_HOR[0] ; 1.628 ; 2.030 ; Fall       ; ENTR_HOR[0]     ;
+; SEN_PRE      ; ENTR_HOR[0] ; 0.738 ; 1.108 ; Fall       ; ENTR_HOR[0]     ;
++--------------+-------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------------+
+; Hold Times                                                                  ;
++--------------+-------------+--------+--------+------------+-----------------+
+; Data Port    ; Clock Port  ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++--------------+-------------+--------+--------+------------+-----------------+
+; ENTR_HOR[*]  ; ENTR_HOR[0] ; 0.666  ; 0.562  ; Fall       ; ENTR_HOR[0]     ;
+;  ENTR_HOR[0] ; ENTR_HOR[0] ; 0.666  ; 0.562  ; Fall       ; ENTR_HOR[0]     ;
+;  ENTR_HOR[1] ; ENTR_HOR[0] ; -1.196 ; -1.516 ; Fall       ; ENTR_HOR[0]     ;
+;  ENTR_HOR[2] ; ENTR_HOR[0] ; -1.204 ; -1.513 ; Fall       ; ENTR_HOR[0]     ;
+;  ENTR_HOR[3] ; ENTR_HOR[0] ; -0.793 ; -1.148 ; Fall       ; ENTR_HOR[0]     ;
+;  ENTR_HOR[4] ; ENTR_HOR[0] ; -0.470 ; -0.840 ; Fall       ; ENTR_HOR[0]     ;
+; INT_MAN      ; ENTR_HOR[0] ; 0.382  ; 0.022  ; Fall       ; ENTR_HOR[0]     ;
+; SEN_PRE      ; ENTR_HOR[0] ; 0.523  ; 0.229  ; Fall       ; ENTR_HOR[0]     ;
++--------------+-------------+--------+--------+------------+-----------------+
+
+
++------------------------------------------------------------------------------+
+; Clock to Output Times                                                        ;
++------------------+------------+-------+-------+------------+-----------------+
+; Data Port        ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------------+------------+-------+-------+------------+-----------------+
+; ALERTA           ; CLOCK      ; 5.977 ; 6.128 ; Rise       ; CLOCK           ;
+; DISPL_STATUS[*]  ; CLOCK      ; 6.757 ; 6.866 ; Rise       ; CLOCK           ;
+;  DISPL_STATUS[0] ; CLOCK      ; 6.043 ; 5.896 ; Rise       ; CLOCK           ;
+;  DISPL_STATUS[2] ; CLOCK      ; 5.872 ; 5.772 ; Rise       ; CLOCK           ;
+;  DISPL_STATUS[3] ; CLOCK      ; 6.757 ; 6.866 ; Rise       ; CLOCK           ;
++------------------+------------+-------+-------+------------+-----------------+
+
+
++------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                ;
++------------------+------------+-------+-------+------------+-----------------+
+; Data Port        ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------------+------------+-------+-------+------------+-----------------+
+; ALERTA           ; CLOCK      ; 5.468 ; 5.641 ; Rise       ; CLOCK           ;
+; DISPL_STATUS[*]  ; CLOCK      ; 5.619 ; 5.523 ; Rise       ; CLOCK           ;
+;  DISPL_STATUS[0] ; CLOCK      ; 5.619 ; 5.523 ; Rise       ; CLOCK           ;
+;  DISPL_STATUS[2] ; CLOCK      ; 5.675 ; 5.576 ; Rise       ; CLOCK           ;
+;  DISPL_STATUS[3] ; CLOCK      ; 6.248 ; 6.379 ; Rise       ; CLOCK           ;
++------------------+------------+-------+-------+------------+-----------------+
+
+
+---------------------------------------------
+; Slow 1200mV 0C Model Metastability Report ;
+---------------------------------------------
+No synchronizer chains to report.
+
+
++--------------------------------------+
+; Fast 1200mV 0C Model Setup Summary   ;
++-------------+--------+---------------+
+; Clock       ; Slack  ; End Point TNS ;
++-------------+--------+---------------+
+; CLOCK       ; -1.479 ; -5.749        ;
+; ENTR_HOR[0] ; 0.492  ; 0.000         ;
++-------------+--------+---------------+
+
+
++--------------------------------------+
+; Fast 1200mV 0C Model Hold Summary    ;
++-------------+--------+---------------+
+; Clock       ; Slack  ; End Point TNS ;
++-------------+--------+---------------+
+; ENTR_HOR[0] ; -0.458 ; -1.742        ;
+; CLOCK       ; 2.086  ; 0.000         ;
++-------------+--------+---------------+
+
+
+-----------------------------------------
+; Fast 1200mV 0C Model Recovery Summary ;
+-----------------------------------------
+No paths to report.
+
+
+----------------------------------------
+; Fast 1200mV 0C Model Removal Summary ;
+----------------------------------------
+No paths to report.
+
+
++--------------------------------------------------+
+; Fast 1200mV 0C Model Minimum Pulse Width Summary ;
++-------------+--------+---------------------------+
+; Clock       ; Slack  ; End Point TNS             ;
++-------------+--------+---------------------------+
+; CLOCK       ; -3.000 ; -8.104                    ;
+; ENTR_HOR[0] ; -3.000 ; -3.000                    ;
++-------------+--------+---------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Setup: 'CLOCK'                                                                                                                                                                              ;
++--------+--------------------------------------------------------------------+--------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                                          ; To Node                                                      ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------------------------------------------------------+--------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -1.479 ; controladora:controladora_inst|proximo_estado.MANUAL_420           ; controladora:controladora_inst|estado_atual.MANUAL           ; ENTR_HOR[0]  ; CLOCK       ; 0.500        ; -1.896     ; 0.050      ;
+; -1.434 ; controladora:controladora_inst|proximo_estado.MODO_NOTURNO_565     ; controladora:controladora_inst|estado_atual.MODO_NOTURNO     ; ENTR_HOR[0]  ; CLOCK       ; 0.500        ; -1.851     ; 0.050      ;
+; -1.419 ; controladora:controladora_inst|proximo_estado.ERRO_594             ; controladora:controladora_inst|estado_atual.ERRO             ; ENTR_HOR[0]  ; CLOCK       ; 0.500        ; -1.836     ; 0.050      ;
+; -1.417 ; controladora:controladora_inst|proximo_estado.DETECTA_PRESENCA_623 ; controladora:controladora_inst|estado_atual.DETECTA_PRESENCA ; ENTR_HOR[0]  ; CLOCK       ; 0.500        ; -1.834     ; 0.050      ;
++--------+--------------------------------------------------------------------+--------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Setup: 'ENTR_HOR[0]'                                                                                                                                                                       ;
++-------+--------------------------------------------------------------+--------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                                    ; To Node                                                            ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------------------------------------------------+--------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.492 ; controladora:controladora_inst|estado_atual.MODO_NOTURNO     ; controladora:controladora_inst|proximo_estado.DETECTA_PRESENCA_623 ; CLOCK        ; ENTR_HOR[0] ; 0.500        ; 1.694      ; 1.183      ;
+; 0.501 ; controladora:controladora_inst|estado_atual.DETECTA_PRESENCA ; controladora:controladora_inst|proximo_estado.MODO_NOTURNO_565     ; CLOCK        ; ENTR_HOR[0] ; 0.500        ; 1.681      ; 1.046      ;
+; 0.526 ; controladora:controladora_inst|estado_atual.MODO_NOTURNO     ; controladora:controladora_inst|proximo_estado.MANUAL_420           ; CLOCK        ; ENTR_HOR[0] ; 0.500        ; 1.753      ; 1.218      ;
+; 0.571 ; ENTR_HOR[0]                                                  ; controladora:controladora_inst|proximo_estado.MODO_NOTURNO_565     ; ENTR_HOR[0]  ; ENTR_HOR[0] ; 0.500        ; 3.033      ; 2.348      ;
+; 0.578 ; ENTR_HOR[0]                                                  ; controladora:controladora_inst|proximo_estado.MODO_NOTURNO_565     ; ENTR_HOR[0]  ; ENTR_HOR[0] ; 1.000        ; 3.033      ; 2.841      ;
+; 0.589 ; ENTR_HOR[0]                                                  ; controladora:controladora_inst|proximo_estado.DETECTA_PRESENCA_623 ; ENTR_HOR[0]  ; ENTR_HOR[0] ; 1.000        ; 3.031      ; 2.943      ;
+; 0.595 ; controladora:controladora_inst|estado_atual.DETECTA_PRESENCA ; controladora:controladora_inst|proximo_estado.DETECTA_PRESENCA_623 ; CLOCK        ; ENTR_HOR[0] ; 0.500        ; 1.679      ; 1.065      ;
+; 0.595 ; controladora:controladora_inst|estado_atual.DETECTA_PRESENCA ; controladora:controladora_inst|proximo_estado.MANUAL_420           ; CLOCK        ; ENTR_HOR[0] ; 0.500        ; 1.738      ; 1.134      ;
+; 0.623 ; controladora:controladora_inst|estado_atual.INIT             ; controladora:controladora_inst|proximo_estado.MANUAL_420           ; CLOCK        ; ENTR_HOR[0] ; 0.500        ; 1.738      ; 1.106      ;
+; 0.625 ; ENTR_HOR[0]                                                  ; controladora:controladora_inst|proximo_estado.DETECTA_PRESENCA_623 ; ENTR_HOR[0]  ; ENTR_HOR[0] ; 0.500        ; 3.031      ; 2.407      ;
+; 0.668 ; controladora:controladora_inst|estado_atual.MANUAL           ; controladora:controladora_inst|proximo_estado.ERRO_594             ; CLOCK        ; ENTR_HOR[0] ; 0.500        ; 1.681      ; 1.157      ;
+; 0.695 ; controladora:controladora_inst|estado_atual.ERRO             ; controladora:controladora_inst|proximo_estado.ERRO_594             ; CLOCK        ; ENTR_HOR[0] ; 0.500        ; 1.681      ; 1.130      ;
+; 0.695 ; ENTR_HOR[0]                                                  ; controladora:controladora_inst|proximo_estado.MANUAL_420           ; ENTR_HOR[0]  ; ENTR_HOR[0] ; 0.500        ; 3.090      ; 2.406      ;
+; 0.718 ; ENTR_HOR[0]                                                  ; controladora:controladora_inst|proximo_estado.MANUAL_420           ; ENTR_HOR[0]  ; ENTR_HOR[0] ; 1.000        ; 3.090      ; 2.883      ;
+; 0.733 ; controladora:controladora_inst|estado_atual.INIT             ; controladora:controladora_inst|proximo_estado.ERRO_594             ; CLOCK        ; ENTR_HOR[0] ; 0.500        ; 1.681      ; 1.092      ;
++-------+--------------------------------------------------------------+--------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Hold: 'ENTR_HOR[0]'                                                                                                                                                                         ;
++--------+--------------------------------------------------------------+--------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                                    ; To Node                                                            ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------------------------------------------------+--------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -0.458 ; controladora:controladora_inst|estado_atual.DETECTA_PRESENCA ; controladora:controladora_inst|proximo_estado.MANUAL_420           ; CLOCK        ; ENTR_HOR[0] ; -0.500       ; 1.896      ; 0.978      ;
+; -0.447 ; controladora:controladora_inst|estado_atual.DETECTA_PRESENCA ; controladora:controladora_inst|proximo_estado.MODO_NOTURNO_565     ; CLOCK        ; ENTR_HOR[0] ; -0.500       ; 1.836      ; 0.929      ;
+; -0.436 ; controladora:controladora_inst|estado_atual.MODO_NOTURNO     ; controladora:controladora_inst|proximo_estado.MANUAL_420           ; CLOCK        ; ENTR_HOR[0] ; -0.500       ; 1.911      ; 1.015      ;
+; -0.434 ; controladora:controladora_inst|estado_atual.DETECTA_PRESENCA ; controladora:controladora_inst|proximo_estado.DETECTA_PRESENCA_623 ; CLOCK        ; ENTR_HOR[0] ; -0.500       ; 1.834      ; 0.940      ;
+; -0.429 ; ENTR_HOR[0]                                                  ; controladora:controladora_inst|proximo_estado.MODO_NOTURNO_565     ; ENTR_HOR[0]  ; ENTR_HOR[0] ; 0.000        ; 3.135      ; 2.706      ;
+; -0.419 ; controladora:controladora_inst|estado_atual.INIT             ; controladora:controladora_inst|proximo_estado.MANUAL_420           ; CLOCK        ; ENTR_HOR[0] ; -0.500       ; 1.896      ; 1.017      ;
+; -0.419 ; ENTR_HOR[0]                                                  ; controladora:controladora_inst|proximo_estado.MODO_NOTURNO_565     ; ENTR_HOR[0]  ; ENTR_HOR[0] ; -0.500       ; 3.135      ; 2.236      ;
+; -0.407 ; ENTR_HOR[0]                                                  ; controladora:controladora_inst|proximo_estado.MANUAL_420           ; ENTR_HOR[0]  ; ENTR_HOR[0] ; 0.000        ; 3.195      ; 2.788      ;
+; -0.403 ; controladora:controladora_inst|estado_atual.ERRO             ; controladora:controladora_inst|proximo_estado.ERRO_594             ; CLOCK        ; ENTR_HOR[0] ; -0.500       ; 1.836      ; 0.973      ;
+; -0.399 ; ENTR_HOR[0]                                                  ; controladora:controladora_inst|proximo_estado.MANUAL_420           ; ENTR_HOR[0]  ; ENTR_HOR[0] ; -0.500       ; 3.195      ; 2.316      ;
+; -0.383 ; controladora:controladora_inst|estado_atual.MANUAL           ; controladora:controladora_inst|proximo_estado.ERRO_594             ; CLOCK        ; ENTR_HOR[0] ; -0.500       ; 1.836      ; 0.993      ;
+; -0.369 ; controladora:controladora_inst|estado_atual.INIT             ; controladora:controladora_inst|proximo_estado.ERRO_594             ; CLOCK        ; ENTR_HOR[0] ; -0.500       ; 1.836      ; 1.007      ;
+; -0.363 ; ENTR_HOR[0]                                                  ; controladora:controladora_inst|proximo_estado.DETECTA_PRESENCA_623 ; ENTR_HOR[0]  ; ENTR_HOR[0] ; -0.500       ; 3.133      ; 2.290      ;
+; -0.362 ; controladora:controladora_inst|estado_atual.MODO_NOTURNO     ; controladora:controladora_inst|proximo_estado.DETECTA_PRESENCA_623 ; CLOCK        ; ENTR_HOR[0] ; -0.500       ; 1.849      ; 1.027      ;
+; -0.319 ; ENTR_HOR[0]                                                  ; controladora:controladora_inst|proximo_estado.DETECTA_PRESENCA_623 ; ENTR_HOR[0]  ; ENTR_HOR[0] ; 0.000        ; 3.133      ; 2.814      ;
++--------+--------------------------------------------------------------+--------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Hold: 'CLOCK'                                                                                                                                                                              ;
++-------+--------------------------------------------------------------------+--------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                                          ; To Node                                                      ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------------------------------------------------------+--------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 2.086 ; controladora:controladora_inst|proximo_estado.DETECTA_PRESENCA_623 ; controladora:controladora_inst|estado_atual.DETECTA_PRESENCA ; ENTR_HOR[0]  ; CLOCK       ; -0.500       ; -1.679     ; 0.031      ;
+; 2.088 ; controladora:controladora_inst|proximo_estado.ERRO_594             ; controladora:controladora_inst|estado_atual.ERRO             ; ENTR_HOR[0]  ; CLOCK       ; -0.500       ; -1.681     ; 0.031      ;
+; 2.103 ; controladora:controladora_inst|proximo_estado.MODO_NOTURNO_565     ; controladora:controladora_inst|estado_atual.MODO_NOTURNO     ; ENTR_HOR[0]  ; CLOCK       ; -0.500       ; -1.696     ; 0.031      ;
+; 2.145 ; controladora:controladora_inst|proximo_estado.MANUAL_420           ; controladora:controladora_inst|estado_atual.MANUAL           ; ENTR_HOR[0]  ; CLOCK       ; -0.500       ; -1.738     ; 0.031      ;
++-------+--------------------------------------------------------------------+--------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Minimum Pulse Width: 'CLOCK'                                                                                             ;
++--------+--------------+----------------+------------------+-------+------------+--------------------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                                                       ;
++--------+--------------+----------------+------------------+-------+------------+--------------------------------------------------------------+
+; -3.000 ; 1.000        ; 4.000          ; Port Rate        ; CLOCK ; Rise       ; CLOCK                                                        ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; CLOCK ; Rise       ; controladora:controladora_inst|estado_atual.DETECTA_PRESENCA ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; CLOCK ; Rise       ; controladora:controladora_inst|estado_atual.ERRO             ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; CLOCK ; Rise       ; controladora:controladora_inst|estado_atual.INIT             ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; CLOCK ; Rise       ; controladora:controladora_inst|estado_atual.MANUAL           ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; CLOCK ; Rise       ; controladora:controladora_inst|estado_atual.MODO_NOTURNO     ;
+; -0.026 ; 0.158        ; 0.184          ; Low Pulse Width  ; CLOCK ; Rise       ; controladora:controladora_inst|estado_atual.DETECTA_PRESENCA ;
+; -0.026 ; 0.158        ; 0.184          ; Low Pulse Width  ; CLOCK ; Rise       ; controladora:controladora_inst|estado_atual.ERRO             ;
+; -0.026 ; 0.158        ; 0.184          ; Low Pulse Width  ; CLOCK ; Rise       ; controladora:controladora_inst|estado_atual.INIT             ;
+; -0.026 ; 0.158        ; 0.184          ; Low Pulse Width  ; CLOCK ; Rise       ; controladora:controladora_inst|estado_atual.MANUAL           ;
+; 0.001  ; 0.185        ; 0.184          ; Low Pulse Width  ; CLOCK ; Rise       ; controladora:controladora_inst|estado_atual.MODO_NOTURNO     ;
+; 0.125  ; 0.125        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; CLOCK~input|o                                                ;
+; 0.139  ; 0.139        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; CLOCK~inputclkctrl|inclk[0]                                  ;
+; 0.139  ; 0.139        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; CLOCK~inputclkctrl|outclk                                    ;
+; 0.153  ; 0.153        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; controladora_inst|estado_atual.DETECTA_PRESENCA|clk          ;
+; 0.153  ; 0.153        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; controladora_inst|estado_atual.ERRO|clk                      ;
+; 0.153  ; 0.153        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; controladora_inst|estado_atual.INIT|clk                      ;
+; 0.153  ; 0.153        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; controladora_inst|estado_atual.MANUAL|clk                    ;
+; 0.179  ; 0.179        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; controladora_inst|estado_atual.MODO_NOTURNO|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; CLOCK~input|i                                                ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; CLOCK~input|i                                                ;
+; 0.599  ; 0.815        ; 0.216          ; High Pulse Width ; CLOCK ; Rise       ; controladora:controladora_inst|estado_atual.MODO_NOTURNO     ;
+; 0.625  ; 0.841        ; 0.216          ; High Pulse Width ; CLOCK ; Rise       ; controladora:controladora_inst|estado_atual.DETECTA_PRESENCA ;
+; 0.625  ; 0.841        ; 0.216          ; High Pulse Width ; CLOCK ; Rise       ; controladora:controladora_inst|estado_atual.ERRO             ;
+; 0.625  ; 0.841        ; 0.216          ; High Pulse Width ; CLOCK ; Rise       ; controladora:controladora_inst|estado_atual.INIT             ;
+; 0.625  ; 0.841        ; 0.216          ; High Pulse Width ; CLOCK ; Rise       ; controladora:controladora_inst|estado_atual.MANUAL           ;
+; 0.819  ; 0.819        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; controladora_inst|estado_atual.MODO_NOTURNO|clk              ;
+; 0.846  ; 0.846        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; controladora_inst|estado_atual.DETECTA_PRESENCA|clk          ;
+; 0.846  ; 0.846        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; controladora_inst|estado_atual.ERRO|clk                      ;
+; 0.846  ; 0.846        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; controladora_inst|estado_atual.INIT|clk                      ;
+; 0.846  ; 0.846        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; controladora_inst|estado_atual.MANUAL|clk                    ;
+; 0.861  ; 0.861        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; CLOCK~inputclkctrl|inclk[0]                                  ;
+; 0.861  ; 0.861        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; CLOCK~inputclkctrl|outclk                                    ;
+; 0.875  ; 0.875        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; CLOCK~input|o                                                ;
++--------+--------------+----------------+------------------+-------+------------+--------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Minimum Pulse Width: 'ENTR_HOR[0]'                                                                                                   ;
++--------+--------------+----------------+------------------+-------------+------------+--------------------------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock       ; Clock Edge ; Target                                                             ;
++--------+--------------+----------------+------------------+-------------+------------+--------------------------------------------------------------------+
+; -3.000 ; 1.000        ; 4.000          ; Port Rate        ; ENTR_HOR[0] ; Rise       ; ENTR_HOR[0]                                                        ;
+; 0.030  ; 0.030        ; 0.000          ; High Pulse Width ; ENTR_HOR[0] ; Fall       ; controladora:controladora_inst|proximo_estado.MANUAL_420           ;
+; 0.031  ; 0.031        ; 0.000          ; Low Pulse Width  ; ENTR_HOR[0] ; Rise       ; controladora_inst|proximo_estado.DETECTA_PRESENCA_623|datad        ;
+; 0.031  ; 0.031        ; 0.000          ; Low Pulse Width  ; ENTR_HOR[0] ; Rise       ; controladora_inst|proximo_estado.ERRO_594|datad                    ;
+; 0.031  ; 0.031        ; 0.000          ; Low Pulse Width  ; ENTR_HOR[0] ; Rise       ; controladora_inst|proximo_estado.MODO_NOTURNO_565|datad            ;
+; 0.033  ; 0.033        ; 0.000          ; Low Pulse Width  ; ENTR_HOR[0] ; Rise       ; controladora_inst|proximo_estado.MANUAL_420|datac                  ;
+; 0.036  ; 0.036        ; 0.000          ; High Pulse Width ; ENTR_HOR[0] ; Fall       ; controladora:controladora_inst|proximo_estado.DETECTA_PRESENCA_623 ;
+; 0.036  ; 0.036        ; 0.000          ; High Pulse Width ; ENTR_HOR[0] ; Fall       ; controladora:controladora_inst|proximo_estado.ERRO_594             ;
+; 0.036  ; 0.036        ; 0.000          ; High Pulse Width ; ENTR_HOR[0] ; Fall       ; controladora:controladora_inst|proximo_estado.MODO_NOTURNO_565     ;
+; 0.042  ; 0.042        ; 0.000          ; Low Pulse Width  ; ENTR_HOR[0] ; Rise       ; controladora_inst|Selector0~0clkctrl|inclk[0]                      ;
+; 0.042  ; 0.042        ; 0.000          ; Low Pulse Width  ; ENTR_HOR[0] ; Rise       ; controladora_inst|Selector0~0clkctrl|outclk                        ;
+; 0.059  ; 0.059        ; 0.000          ; Low Pulse Width  ; ENTR_HOR[0] ; Rise       ; controladora_inst|Selector0~0|combout                              ;
+; 0.062  ; 0.062        ; 0.000          ; Low Pulse Width  ; ENTR_HOR[0] ; Rise       ; controladora_inst|Selector0~0|datac                                ;
+; 0.076  ; 0.076        ; 0.000          ; Low Pulse Width  ; ENTR_HOR[0] ; Rise       ; controladora_inst|combinational~5|datad                            ;
+; 0.081  ; 0.081        ; 0.000          ; Low Pulse Width  ; ENTR_HOR[0] ; Rise       ; controladora_inst|combinational~5|combout                          ;
+; 0.089  ; 0.089        ; 0.000          ; Low Pulse Width  ; ENTR_HOR[0] ; Rise       ; controladora_inst|combinational~3|datad                            ;
+; 0.094  ; 0.094        ; 0.000          ; Low Pulse Width  ; ENTR_HOR[0] ; Rise       ; controladora_inst|combinational~3|combout                          ;
+; 0.125  ; 0.125        ; 0.000          ; Low Pulse Width  ; ENTR_HOR[0] ; Rise       ; ENTR_HOR[0]~input|o                                                ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ENTR_HOR[0] ; Rise       ; ENTR_HOR[0]~input|i                                                ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ENTR_HOR[0] ; Rise       ; ENTR_HOR[0]~input|i                                                ;
+; 0.875  ; 0.875        ; 0.000          ; High Pulse Width ; ENTR_HOR[0] ; Rise       ; ENTR_HOR[0]~input|o                                                ;
+; 0.905  ; 0.905        ; 0.000          ; High Pulse Width ; ENTR_HOR[0] ; Rise       ; controladora_inst|combinational~3|combout                          ;
+; 0.909  ; 0.909        ; 0.000          ; High Pulse Width ; ENTR_HOR[0] ; Rise       ; controladora_inst|combinational~3|datad                            ;
+; 0.918  ; 0.918        ; 0.000          ; High Pulse Width ; ENTR_HOR[0] ; Rise       ; controladora_inst|combinational~5|combout                          ;
+; 0.922  ; 0.922        ; 0.000          ; High Pulse Width ; ENTR_HOR[0] ; Rise       ; controladora_inst|combinational~5|datad                            ;
+; 0.936  ; 0.936        ; 0.000          ; High Pulse Width ; ENTR_HOR[0] ; Rise       ; controladora_inst|Selector0~0|datac                                ;
+; 0.939  ; 0.939        ; 0.000          ; High Pulse Width ; ENTR_HOR[0] ; Rise       ; controladora_inst|Selector0~0|combout                              ;
+; 0.955  ; 0.955        ; 0.000          ; High Pulse Width ; ENTR_HOR[0] ; Rise       ; controladora_inst|Selector0~0clkctrl|inclk[0]                      ;
+; 0.955  ; 0.955        ; 0.000          ; High Pulse Width ; ENTR_HOR[0] ; Rise       ; controladora_inst|Selector0~0clkctrl|outclk                        ;
+; 0.961  ; 0.961        ; 0.000          ; Low Pulse Width  ; ENTR_HOR[0] ; Fall       ; controladora:controladora_inst|proximo_estado.DETECTA_PRESENCA_623 ;
+; 0.961  ; 0.961        ; 0.000          ; Low Pulse Width  ; ENTR_HOR[0] ; Fall       ; controladora:controladora_inst|proximo_estado.ERRO_594             ;
+; 0.961  ; 0.961        ; 0.000          ; Low Pulse Width  ; ENTR_HOR[0] ; Fall       ; controladora:controladora_inst|proximo_estado.MODO_NOTURNO_565     ;
+; 0.963  ; 0.963        ; 0.000          ; High Pulse Width ; ENTR_HOR[0] ; Rise       ; controladora_inst|proximo_estado.MANUAL_420|datac                  ;
+; 0.965  ; 0.965        ; 0.000          ; High Pulse Width ; ENTR_HOR[0] ; Rise       ; controladora_inst|proximo_estado.DETECTA_PRESENCA_623|datad        ;
+; 0.965  ; 0.965        ; 0.000          ; High Pulse Width ; ENTR_HOR[0] ; Rise       ; controladora_inst|proximo_estado.ERRO_594|datad                    ;
+; 0.965  ; 0.965        ; 0.000          ; High Pulse Width ; ENTR_HOR[0] ; Rise       ; controladora_inst|proximo_estado.MODO_NOTURNO_565|datad            ;
+; 0.966  ; 0.966        ; 0.000          ; Low Pulse Width  ; ENTR_HOR[0] ; Fall       ; controladora:controladora_inst|proximo_estado.MANUAL_420           ;
++--------+--------------+----------------+------------------+-------------+------------+--------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------+
+; Setup Times                                                                ;
++--------------+-------------+--------+-------+------------+-----------------+
+; Data Port    ; Clock Port  ; Rise   ; Fall  ; Clock Edge ; Clock Reference ;
++--------------+-------------+--------+-------+------------+-----------------+
+; ENTR_HOR[*]  ; ENTR_HOR[0] ; 1.541  ; 2.042 ; Fall       ; ENTR_HOR[0]     ;
+;  ENTR_HOR[0] ; ENTR_HOR[0] ; -0.091 ; 0.402 ; Fall       ; ENTR_HOR[0]     ;
+;  ENTR_HOR[1] ; ENTR_HOR[0] ; 1.253  ; 1.916 ; Fall       ; ENTR_HOR[0]     ;
+;  ENTR_HOR[2] ; ENTR_HOR[0] ; 1.541  ; 2.042 ; Fall       ; ENTR_HOR[0]     ;
+;  ENTR_HOR[3] ; ENTR_HOR[0] ; 1.336  ; 1.997 ; Fall       ; ENTR_HOR[0]     ;
+;  ENTR_HOR[4] ; ENTR_HOR[0] ; 1.172  ; 1.682 ; Fall       ; ENTR_HOR[0]     ;
+; INT_MAN      ; ENTR_HOR[0] ; 0.758  ; 1.282 ; Fall       ; ENTR_HOR[0]     ;
+; SEN_PRE      ; ENTR_HOR[0] ; 0.197  ; 0.725 ; Fall       ; ENTR_HOR[0]     ;
++--------------+-------------+--------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------------+
+; Hold Times                                                                  ;
++--------------+-------------+--------+--------+------------+-----------------+
+; Data Port    ; Clock Port  ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++--------------+-------------+--------+--------+------------+-----------------+
+; ENTR_HOR[*]  ; ENTR_HOR[0] ; 0.899  ; 0.429  ; Fall       ; ENTR_HOR[0]     ;
+;  ENTR_HOR[0] ; ENTR_HOR[0] ; 0.899  ; 0.429  ; Fall       ; ENTR_HOR[0]     ;
+;  ENTR_HOR[1] ; ENTR_HOR[0] ; -0.390 ; -1.023 ; Fall       ; ENTR_HOR[0]     ;
+;  ENTR_HOR[2] ; ENTR_HOR[0] ; -0.374 ; -1.001 ; Fall       ; ENTR_HOR[0]     ;
+;  ENTR_HOR[3] ; ENTR_HOR[0] ; -0.190 ; -0.710 ; Fall       ; ENTR_HOR[0]     ;
+;  ENTR_HOR[4] ; ENTR_HOR[0] ; 0.018  ; -0.527 ; Fall       ; ENTR_HOR[0]     ;
+; INT_MAN      ; ENTR_HOR[0] ; 0.512  ; -0.007 ; Fall       ; ENTR_HOR[0]     ;
+; SEN_PRE      ; ENTR_HOR[0] ; 0.643  ; 0.079  ; Fall       ; ENTR_HOR[0]     ;
++--------------+-------------+--------+--------+------------+-----------------+
+
+
++------------------------------------------------------------------------------+
+; Clock to Output Times                                                        ;
++------------------+------------+-------+-------+------------+-----------------+
+; Data Port        ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------------+------------+-------+-------+------------+-----------------+
+; ALERTA           ; CLOCK      ; 3.935 ; 3.963 ; Rise       ; CLOCK           ;
+; DISPL_STATUS[*]  ; CLOCK      ; 4.588 ; 4.598 ; Rise       ; CLOCK           ;
+;  DISPL_STATUS[0] ; CLOCK      ; 3.857 ; 3.938 ; Rise       ; CLOCK           ;
+;  DISPL_STATUS[2] ; CLOCK      ; 3.783 ; 3.852 ; Rise       ; CLOCK           ;
+;  DISPL_STATUS[3] ; CLOCK      ; 4.588 ; 4.598 ; Rise       ; CLOCK           ;
++------------------+------------+-------+-------+------------+-----------------+
+
+
++------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                ;
++------------------+------------+-------+-------+------------+-----------------+
+; Data Port        ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------------+------------+-------+-------+------------+-----------------+
+; ALERTA           ; CLOCK      ; 3.618 ; 3.650 ; Rise       ; CLOCK           ;
+; DISPL_STATUS[*]  ; CLOCK      ; 3.616 ; 3.676 ; Rise       ; CLOCK           ;
+;  DISPL_STATUS[0] ; CLOCK      ; 3.616 ; 3.676 ; Rise       ; CLOCK           ;
+;  DISPL_STATUS[2] ; CLOCK      ; 3.654 ; 3.720 ; Rise       ; CLOCK           ;
+;  DISPL_STATUS[3] ; CLOCK      ; 4.271 ; 4.285 ; Rise       ; CLOCK           ;
++------------------+------------+-------+-------+------------+-----------------+
+
+
+---------------------------------------------
+; Fast 1200mV 0C Model Metastability Report ;
+---------------------------------------------
+No synchronizer chains to report.
+
+
++-------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                           ;
++------------------+--------+--------+----------+---------+---------------------+
+; Clock            ; Setup  ; Hold   ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+--------+--------+----------+---------+---------------------+
+; Worst-case Slack ; -2.451 ; -0.678 ; N/A      ; N/A     ; -3.000              ;
+;  CLOCK           ; -2.451 ; 2.086  ; N/A      ; N/A     ; -3.000              ;
+;  ENTR_HOR[0]     ; -0.213 ; -0.678 ; N/A      ; N/A     ; -3.000              ;
+; Design-wide TNS  ; -9.736 ; -2.23  ; 0.0      ; 0.0     ; -11.104             ;
+;  CLOCK           ; -9.474 ; 0.000  ; N/A      ; N/A     ; -8.104              ;
+;  ENTR_HOR[0]     ; -0.382 ; -2.230 ; N/A      ; N/A     ; -3.000              ;
++------------------+--------+--------+----------+---------+---------------------+
+
+
++---------------------------------------------------------------------------+
+; Setup Times                                                               ;
++--------------+-------------+-------+-------+------------+-----------------+
+; Data Port    ; Clock Port  ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++--------------+-------------+-------+-------+------------+-----------------+
+; ENTR_HOR[*]  ; ENTR_HOR[0] ; 3.292 ; 3.699 ; Fall       ; ENTR_HOR[0]     ;
+;  ENTR_HOR[0] ; ENTR_HOR[0] ; 0.693 ; 0.781 ; Fall       ; ENTR_HOR[0]     ;
+;  ENTR_HOR[1] ; ENTR_HOR[0] ; 2.903 ; 3.347 ; Fall       ; ENTR_HOR[0]     ;
+;  ENTR_HOR[2] ; ENTR_HOR[0] ; 3.292 ; 3.699 ; Fall       ; ENTR_HOR[0]     ;
+;  ENTR_HOR[3] ; ENTR_HOR[0] ; 3.059 ; 3.492 ; Fall       ; ENTR_HOR[0]     ;
+;  ENTR_HOR[4] ; ENTR_HOR[0] ; 2.638 ; 3.044 ; Fall       ; ENTR_HOR[0]     ;
+; INT_MAN      ; ENTR_HOR[0] ; 1.879 ; 2.316 ; Fall       ; ENTR_HOR[0]     ;
+; SEN_PRE      ; ENTR_HOR[0] ; 0.900 ; 1.318 ; Fall       ; ENTR_HOR[0]     ;
++--------------+-------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------------+
+; Hold Times                                                                  ;
++--------------+-------------+--------+--------+------------+-----------------+
+; Data Port    ; Clock Port  ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++--------------+-------------+--------+--------+------------+-----------------+
+; ENTR_HOR[*]  ; ENTR_HOR[0] ; 0.899  ; 0.678  ; Fall       ; ENTR_HOR[0]     ;
+;  ENTR_HOR[0] ; ENTR_HOR[0] ; 0.899  ; 0.678  ; Fall       ; ENTR_HOR[0]     ;
+;  ENTR_HOR[1] ; ENTR_HOR[0] ; -0.390 ; -1.023 ; Fall       ; ENTR_HOR[0]     ;
+;  ENTR_HOR[2] ; ENTR_HOR[0] ; -0.374 ; -1.001 ; Fall       ; ENTR_HOR[0]     ;
+;  ENTR_HOR[3] ; ENTR_HOR[0] ; -0.190 ; -0.710 ; Fall       ; ENTR_HOR[0]     ;
+;  ENTR_HOR[4] ; ENTR_HOR[0] ; 0.018  ; -0.527 ; Fall       ; ENTR_HOR[0]     ;
+; INT_MAN      ; ENTR_HOR[0] ; 0.512  ; 0.022  ; Fall       ; ENTR_HOR[0]     ;
+; SEN_PRE      ; ENTR_HOR[0] ; 0.643  ; 0.229  ; Fall       ; ENTR_HOR[0]     ;
++--------------+-------------+--------+--------+------------+-----------------+
+
+
++------------------------------------------------------------------------------+
+; Clock to Output Times                                                        ;
++------------------+------------+-------+-------+------------+-----------------+
+; Data Port        ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------------+------------+-------+-------+------------+-----------------+
+; ALERTA           ; CLOCK      ; 6.685 ; 6.854 ; Rise       ; CLOCK           ;
+; DISPL_STATUS[*]  ; CLOCK      ; 7.593 ; 7.707 ; Rise       ; CLOCK           ;
+;  DISPL_STATUS[0] ; CLOCK      ; 6.699 ; 6.621 ; Rise       ; CLOCK           ;
+;  DISPL_STATUS[2] ; CLOCK      ; 6.533 ; 6.457 ; Rise       ; CLOCK           ;
+;  DISPL_STATUS[3] ; CLOCK      ; 7.593 ; 7.707 ; Rise       ; CLOCK           ;
++------------------+------------+-------+-------+------------+-----------------+
+
+
++------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                ;
++------------------+------------+-------+-------+------------+-----------------+
+; Data Port        ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------------+------------+-------+-------+------------+-----------------+
+; ALERTA           ; CLOCK      ; 3.618 ; 3.650 ; Rise       ; CLOCK           ;
+; DISPL_STATUS[*]  ; CLOCK      ; 3.616 ; 3.676 ; Rise       ; CLOCK           ;
+;  DISPL_STATUS[0] ; CLOCK      ; 3.616 ; 3.676 ; Rise       ; CLOCK           ;
+;  DISPL_STATUS[2] ; CLOCK      ; 3.654 ; 3.720 ; Rise       ; CLOCK           ;
+;  DISPL_STATUS[3] ; CLOCK      ; 4.271 ; 4.285 ; Rise       ; CLOCK           ;
++------------------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Board Trace Model Assignments                                                                                                                                                                                                                                                                                                                                                                                      ;
++-----------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; Pin             ; I/O Standard ; Near Tline Length ; Near Tline L per Length ; Near Tline C per Length ; Near Series R ; Near Differential R ; Near Pull-up R ; Near Pull-down R ; Near C ; Far Tline Length ; Far Tline L per Length ; Far Tline C per Length ; Far Series R ; Far Pull-up R ; Far Pull-down R ; Far C ; Termination Voltage ; Far Differential R ; EBD File Name ; EBD Signal Name ; EBD Far-end ;
++-----------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; ALERTA          ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; ILUM_NAT        ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; DISPL_STATUS[0] ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; DISPL_STATUS[1] ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; DISPL_STATUS[2] ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; DISPL_STATUS[3] ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; DISPL_STATUS[4] ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; DISPL_STATUS[5] ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; DISPL_STATUS[6] ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; LEDS[0]         ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; LEDS[1]         ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; LEDS[2]         ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; LEDS[3]         ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; LEDS[4]         ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; LEDS[5]         ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; LEDS[6]         ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; LEDS[7]         ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; ~ALTERA_NCEO~   ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; ~ALTERA_DCLK~   ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
++-----------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+
+
++-------------------------------------------------------------------+
+; Input Transition Times                                            ;
++----------------+--------------+-----------------+-----------------+
+; Pin            ; I/O Standard ; 10-90 Rise Time ; 90-10 Fall Time ;
++----------------+--------------+-----------------+-----------------+
+; TIMER          ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; SEN_LUM[0]     ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; SEN_LUM[1]     ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; SEN_LUM[2]     ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; SEN_LUM[3]     ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; SEN_LUM[4]     ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; SEN_LUM[5]     ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; SEN_LUM[6]     ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; SEN_LUM[7]     ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ENTR_HOR[5]    ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; CLOCK          ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; CLR            ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; INT_MAN        ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ENTR_HOR[2]    ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ENTR_HOR[4]    ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ENTR_HOR[3]    ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ENTR_HOR[0]    ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ENTR_HOR[1]    ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; SEN_PRE        ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_DATA0~ ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_ASDO~  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_NCSO~  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
++----------------+--------------+-----------------+-----------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Slow 1200mv 0c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              ;
++-----------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin             ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++-----------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; ALERTA          ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 7.29e-09 V                   ; 2.39 V              ; -0.00339 V          ; 0.206 V                              ; 0.007 V                              ; 2.77e-10 s                  ; 3.24e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 7.29e-09 V                  ; 2.39 V             ; -0.00339 V         ; 0.206 V                             ; 0.007 V                             ; 2.77e-10 s                 ; 3.24e-10 s                 ; Yes                       ; Yes                       ;
+; ILUM_NAT        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 7.29e-09 V                   ; 2.39 V              ; -0.00317 V          ; 0.179 V                              ; 0.007 V                              ; 4.7e-10 s                   ; 4.72e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 7.29e-09 V                  ; 2.39 V             ; -0.00317 V         ; 0.179 V                             ; 0.007 V                             ; 4.7e-10 s                  ; 4.72e-10 s                 ; No                        ; Yes                       ;
+; DISPL_STATUS[0] ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 7.29e-09 V                   ; 2.39 V              ; -0.00317 V          ; 0.179 V                              ; 0.007 V                              ; 4.7e-10 s                   ; 4.72e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 7.29e-09 V                  ; 2.39 V             ; -0.00317 V         ; 0.179 V                             ; 0.007 V                             ; 4.7e-10 s                  ; 4.72e-10 s                 ; No                        ; Yes                       ;
+; DISPL_STATUS[1] ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 7.29e-09 V                   ; 2.39 V              ; -0.00317 V          ; 0.179 V                              ; 0.007 V                              ; 4.7e-10 s                   ; 4.72e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 7.29e-09 V                  ; 2.39 V             ; -0.00317 V         ; 0.179 V                             ; 0.007 V                             ; 4.7e-10 s                  ; 4.72e-10 s                 ; No                        ; Yes                       ;
+; DISPL_STATUS[2] ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 7.29e-09 V                   ; 2.39 V              ; -0.00339 V          ; 0.206 V                              ; 0.007 V                              ; 2.77e-10 s                  ; 3.24e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 7.29e-09 V                  ; 2.39 V             ; -0.00339 V         ; 0.206 V                             ; 0.007 V                             ; 2.77e-10 s                 ; 3.24e-10 s                 ; Yes                       ; Yes                       ;
+; DISPL_STATUS[3] ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 7.29e-09 V                   ; 2.34 V              ; -0.00668 V          ; 0.218 V                              ; 0.076 V                              ; 1.92e-09 s                  ; 1.81e-09 s                  ; No                         ; Yes                        ; 2.32 V                      ; 7.29e-09 V                  ; 2.34 V             ; -0.00668 V         ; 0.218 V                             ; 0.076 V                             ; 1.92e-09 s                 ; 1.81e-09 s                 ; No                        ; Yes                       ;
+; DISPL_STATUS[4] ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 7.29e-09 V                   ; 2.39 V              ; -0.00339 V          ; 0.206 V                              ; 0.007 V                              ; 2.77e-10 s                  ; 3.24e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 7.29e-09 V                  ; 2.39 V             ; -0.00339 V         ; 0.206 V                             ; 0.007 V                             ; 2.77e-10 s                 ; 3.24e-10 s                 ; Yes                       ; Yes                       ;
+; DISPL_STATUS[5] ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 5.16e-09 V                   ; 2.37 V              ; -0.00861 V          ; 0.168 V                              ; 0.038 V                              ; 6.79e-10 s                  ; 6.49e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 5.16e-09 V                  ; 2.37 V             ; -0.00861 V         ; 0.168 V                             ; 0.038 V                             ; 6.79e-10 s                 ; 6.49e-10 s                 ; No                        ; Yes                       ;
+; DISPL_STATUS[6] ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 5.16e-09 V                   ; 2.37 V              ; -0.00861 V          ; 0.168 V                              ; 0.038 V                              ; 6.79e-10 s                  ; 6.49e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 5.16e-09 V                  ; 2.37 V             ; -0.00861 V         ; 0.168 V                             ; 0.038 V                             ; 6.79e-10 s                 ; 6.49e-10 s                 ; No                        ; Yes                       ;
+; LEDS[0]         ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 7.29e-09 V                   ; 2.39 V              ; -0.00317 V          ; 0.179 V                              ; 0.007 V                              ; 4.7e-10 s                   ; 4.72e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 7.29e-09 V                  ; 2.39 V             ; -0.00317 V         ; 0.179 V                             ; 0.007 V                             ; 4.7e-10 s                  ; 4.72e-10 s                 ; No                        ; Yes                       ;
+; LEDS[1]         ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 7.29e-09 V                   ; 2.39 V              ; -0.00317 V          ; 0.179 V                              ; 0.007 V                              ; 4.7e-10 s                   ; 4.72e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 7.29e-09 V                  ; 2.39 V             ; -0.00317 V         ; 0.179 V                             ; 0.007 V                             ; 4.7e-10 s                  ; 4.72e-10 s                 ; No                        ; Yes                       ;
+; LEDS[2]         ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 5.16e-09 V                   ; 2.37 V              ; -0.00861 V          ; 0.168 V                              ; 0.038 V                              ; 6.79e-10 s                  ; 6.49e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 5.16e-09 V                  ; 2.37 V             ; -0.00861 V         ; 0.168 V                             ; 0.038 V                             ; 6.79e-10 s                 ; 6.49e-10 s                 ; No                        ; Yes                       ;
+; LEDS[3]         ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 7.29e-09 V                   ; 2.39 V              ; -0.00339 V          ; 0.206 V                              ; 0.007 V                              ; 2.77e-10 s                  ; 3.24e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 7.29e-09 V                  ; 2.39 V             ; -0.00339 V         ; 0.206 V                             ; 0.007 V                             ; 2.77e-10 s                 ; 3.24e-10 s                 ; Yes                       ; Yes                       ;
+; LEDS[4]         ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 7.29e-09 V                   ; 2.34 V              ; -0.00668 V          ; 0.218 V                              ; 0.076 V                              ; 1.92e-09 s                  ; 1.81e-09 s                  ; No                         ; Yes                        ; 2.32 V                      ; 7.29e-09 V                  ; 2.34 V             ; -0.00668 V         ; 0.218 V                             ; 0.076 V                             ; 1.92e-09 s                 ; 1.81e-09 s                 ; No                        ; Yes                       ;
+; LEDS[5]         ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 7.29e-09 V                   ; 2.39 V              ; -0.00317 V          ; 0.179 V                              ; 0.007 V                              ; 4.7e-10 s                   ; 4.72e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 7.29e-09 V                  ; 2.39 V             ; -0.00317 V         ; 0.179 V                             ; 0.007 V                             ; 4.7e-10 s                  ; 4.72e-10 s                 ; No                        ; Yes                       ;
+; LEDS[6]         ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 7.29e-09 V                   ; 2.39 V              ; -0.00317 V          ; 0.179 V                              ; 0.007 V                              ; 4.7e-10 s                   ; 4.72e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 7.29e-09 V                  ; 2.39 V             ; -0.00317 V         ; 0.179 V                             ; 0.007 V                             ; 4.7e-10 s                  ; 4.72e-10 s                 ; No                        ; Yes                       ;
+; LEDS[7]         ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 5.16e-09 V                   ; 2.37 V              ; -0.00861 V          ; 0.168 V                              ; 0.038 V                              ; 6.79e-10 s                  ; 6.49e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 5.16e-09 V                  ; 2.37 V             ; -0.00861 V         ; 0.168 V                             ; 0.038 V                             ; 6.79e-10 s                 ; 6.49e-10 s                 ; No                        ; Yes                       ;
+; ~ALTERA_NCEO~   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.76e-09 V                   ; 2.4 V               ; -0.034 V            ; 0.102 V                              ; 0.065 V                              ; 2.49e-10 s                  ; 3.49e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 4.76e-09 V                  ; 2.4 V              ; -0.034 V           ; 0.102 V                             ; 0.065 V                             ; 2.49e-10 s                 ; 3.49e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_DCLK~   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 5.94e-09 V                   ; 2.39 V              ; -0.0349 V           ; 0.156 V                              ; 0.09 V                               ; 2.68e-10 s                  ; 2.6e-10 s                   ; Yes                        ; Yes                        ; 2.32 V                      ; 5.94e-09 V                  ; 2.39 V             ; -0.0349 V          ; 0.156 V                             ; 0.09 V                              ; 2.68e-10 s                 ; 2.6e-10 s                  ; Yes                       ; Yes                       ;
++-----------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Slow 1200mv 85c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             ;
++-----------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin             ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++-----------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; ALERTA          ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.21e-06 V                   ; 2.37 V              ; -0.00606 V          ; 0.107 V                              ; 0.021 V                              ; 4.26e-10 s                  ; 4.03e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.21e-06 V                  ; 2.37 V             ; -0.00606 V         ; 0.107 V                             ; 0.021 V                             ; 4.26e-10 s                 ; 4.03e-10 s                 ; Yes                       ; Yes                       ;
+; ILUM_NAT        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.21e-06 V                   ; 2.36 V              ; -0.00833 V          ; 0.113 V                              ; 0.035 V                              ; 6.32e-10 s                  ; 5.89e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 1.21e-06 V                  ; 2.36 V             ; -0.00833 V         ; 0.113 V                             ; 0.035 V                             ; 6.32e-10 s                 ; 5.89e-10 s                 ; No                        ; Yes                       ;
+; DISPL_STATUS[0] ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.21e-06 V                   ; 2.36 V              ; -0.00833 V          ; 0.113 V                              ; 0.035 V                              ; 6.32e-10 s                  ; 5.89e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 1.21e-06 V                  ; 2.36 V             ; -0.00833 V         ; 0.113 V                             ; 0.035 V                             ; 6.32e-10 s                 ; 5.89e-10 s                 ; No                        ; Yes                       ;
+; DISPL_STATUS[1] ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.21e-06 V                   ; 2.36 V              ; -0.00833 V          ; 0.113 V                              ; 0.035 V                              ; 6.32e-10 s                  ; 5.89e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 1.21e-06 V                  ; 2.36 V             ; -0.00833 V         ; 0.113 V                             ; 0.035 V                             ; 6.32e-10 s                 ; 5.89e-10 s                 ; No                        ; Yes                       ;
+; DISPL_STATUS[2] ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.21e-06 V                   ; 2.37 V              ; -0.00606 V          ; 0.107 V                              ; 0.021 V                              ; 4.26e-10 s                  ; 4.03e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.21e-06 V                  ; 2.37 V             ; -0.00606 V         ; 0.107 V                             ; 0.021 V                             ; 4.26e-10 s                 ; 4.03e-10 s                 ; Yes                       ; Yes                       ;
+; DISPL_STATUS[3] ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.21e-06 V                   ; 2.33 V              ; -0.00286 V          ; 0.193 V                              ; 0.042 V                              ; 2.32e-09 s                  ; 2.21e-09 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.21e-06 V                  ; 2.33 V             ; -0.00286 V         ; 0.193 V                             ; 0.042 V                             ; 2.32e-09 s                 ; 2.21e-09 s                 ; Yes                       ; Yes                       ;
+; DISPL_STATUS[4] ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.21e-06 V                   ; 2.37 V              ; -0.00606 V          ; 0.107 V                              ; 0.021 V                              ; 4.26e-10 s                  ; 4.03e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.21e-06 V                  ; 2.37 V             ; -0.00606 V         ; 0.107 V                             ; 0.021 V                             ; 4.26e-10 s                 ; 4.03e-10 s                 ; Yes                       ; Yes                       ;
+; DISPL_STATUS[5] ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 8.13e-07 V                   ; 2.35 V              ; -0.00662 V          ; 0.129 V                              ; 0.049 V                              ; 8.55e-10 s                  ; 8.01e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 8.13e-07 V                  ; 2.35 V             ; -0.00662 V         ; 0.129 V                             ; 0.049 V                             ; 8.55e-10 s                 ; 8.01e-10 s                 ; No                        ; Yes                       ;
+; DISPL_STATUS[6] ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 8.13e-07 V                   ; 2.35 V              ; -0.00662 V          ; 0.129 V                              ; 0.049 V                              ; 8.55e-10 s                  ; 8.01e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 8.13e-07 V                  ; 2.35 V             ; -0.00662 V         ; 0.129 V                             ; 0.049 V                             ; 8.55e-10 s                 ; 8.01e-10 s                 ; No                        ; Yes                       ;
+; LEDS[0]         ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.21e-06 V                   ; 2.36 V              ; -0.00833 V          ; 0.113 V                              ; 0.035 V                              ; 6.32e-10 s                  ; 5.89e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 1.21e-06 V                  ; 2.36 V             ; -0.00833 V         ; 0.113 V                             ; 0.035 V                             ; 6.32e-10 s                 ; 5.89e-10 s                 ; No                        ; Yes                       ;
+; LEDS[1]         ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.21e-06 V                   ; 2.36 V              ; -0.00833 V          ; 0.113 V                              ; 0.035 V                              ; 6.32e-10 s                  ; 5.89e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 1.21e-06 V                  ; 2.36 V             ; -0.00833 V         ; 0.113 V                             ; 0.035 V                             ; 6.32e-10 s                 ; 5.89e-10 s                 ; No                        ; Yes                       ;
+; LEDS[2]         ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 8.13e-07 V                   ; 2.35 V              ; -0.00662 V          ; 0.129 V                              ; 0.049 V                              ; 8.55e-10 s                  ; 8.01e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 8.13e-07 V                  ; 2.35 V             ; -0.00662 V         ; 0.129 V                             ; 0.049 V                             ; 8.55e-10 s                 ; 8.01e-10 s                 ; No                        ; Yes                       ;
+; LEDS[3]         ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.21e-06 V                   ; 2.37 V              ; -0.00606 V          ; 0.107 V                              ; 0.021 V                              ; 4.26e-10 s                  ; 4.03e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.21e-06 V                  ; 2.37 V             ; -0.00606 V         ; 0.107 V                             ; 0.021 V                             ; 4.26e-10 s                 ; 4.03e-10 s                 ; Yes                       ; Yes                       ;
+; LEDS[4]         ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.21e-06 V                   ; 2.33 V              ; -0.00286 V          ; 0.193 V                              ; 0.042 V                              ; 2.32e-09 s                  ; 2.21e-09 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.21e-06 V                  ; 2.33 V             ; -0.00286 V         ; 0.193 V                             ; 0.042 V                             ; 2.32e-09 s                 ; 2.21e-09 s                 ; Yes                       ; Yes                       ;
+; LEDS[5]         ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.21e-06 V                   ; 2.36 V              ; -0.00833 V          ; 0.113 V                              ; 0.035 V                              ; 6.32e-10 s                  ; 5.89e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 1.21e-06 V                  ; 2.36 V             ; -0.00833 V         ; 0.113 V                             ; 0.035 V                             ; 6.32e-10 s                 ; 5.89e-10 s                 ; No                        ; Yes                       ;
+; LEDS[6]         ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.21e-06 V                   ; 2.36 V              ; -0.00833 V          ; 0.113 V                              ; 0.035 V                              ; 6.32e-10 s                  ; 5.89e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 1.21e-06 V                  ; 2.36 V             ; -0.00833 V         ; 0.113 V                             ; 0.035 V                             ; 6.32e-10 s                 ; 5.89e-10 s                 ; No                        ; Yes                       ;
+; LEDS[7]         ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 8.13e-07 V                   ; 2.35 V              ; -0.00662 V          ; 0.129 V                              ; 0.049 V                              ; 8.55e-10 s                  ; 8.01e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 8.13e-07 V                  ; 2.35 V             ; -0.00662 V         ; 0.129 V                             ; 0.049 V                             ; 8.55e-10 s                 ; 8.01e-10 s                 ; No                        ; Yes                       ;
+; ~ALTERA_NCEO~   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 7.93e-07 V                   ; 2.37 V              ; -0.0278 V           ; 0.106 V                              ; 0.115 V                              ; 2.69e-10 s                  ; 4.05e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 7.93e-07 V                  ; 2.37 V             ; -0.0278 V          ; 0.106 V                             ; 0.115 V                             ; 2.69e-10 s                 ; 4.05e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_DCLK~   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 9.76e-07 V                   ; 2.36 V              ; -0.00496 V          ; 0.088 V                              ; 0.006 V                              ; 4.05e-10 s                  ; 3.35e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 9.76e-07 V                  ; 2.36 V             ; -0.00496 V         ; 0.088 V                             ; 0.006 V                             ; 4.05e-10 s                 ; 3.35e-10 s                 ; Yes                       ; Yes                       ;
++-----------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Fast 1200mv 0c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              ;
++-----------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin             ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++-----------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; ALERTA          ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.66e-08 V                   ; 2.73 V              ; -0.0205 V           ; 0.17 V                               ; 0.027 V                              ; 2.58e-10 s                  ; 2.57e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.66e-08 V                  ; 2.73 V             ; -0.0205 V          ; 0.17 V                              ; 0.027 V                             ; 2.58e-10 s                 ; 2.57e-10 s                 ; Yes                       ; Yes                       ;
+; ILUM_NAT        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.66e-08 V                   ; 2.72 V              ; -0.0215 V           ; 0.161 V                              ; 0.061 V                              ; 4.44e-10 s                  ; 4.06e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 4.66e-08 V                  ; 2.72 V             ; -0.0215 V          ; 0.161 V                             ; 0.061 V                             ; 4.44e-10 s                 ; 4.06e-10 s                 ; No                        ; Yes                       ;
+; DISPL_STATUS[0] ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.66e-08 V                   ; 2.72 V              ; -0.0215 V           ; 0.161 V                              ; 0.061 V                              ; 4.44e-10 s                  ; 4.06e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 4.66e-08 V                  ; 2.72 V             ; -0.0215 V          ; 0.161 V                             ; 0.061 V                             ; 4.44e-10 s                 ; 4.06e-10 s                 ; No                        ; Yes                       ;
+; DISPL_STATUS[1] ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.66e-08 V                   ; 2.72 V              ; -0.0215 V           ; 0.161 V                              ; 0.061 V                              ; 4.44e-10 s                  ; 4.06e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 4.66e-08 V                  ; 2.72 V             ; -0.0215 V          ; 0.161 V                             ; 0.061 V                             ; 4.44e-10 s                 ; 4.06e-10 s                 ; No                        ; Yes                       ;
+; DISPL_STATUS[2] ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.66e-08 V                   ; 2.73 V              ; -0.0205 V           ; 0.17 V                               ; 0.027 V                              ; 2.58e-10 s                  ; 2.57e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.66e-08 V                  ; 2.73 V             ; -0.0205 V          ; 0.17 V                              ; 0.027 V                             ; 2.58e-10 s                 ; 2.57e-10 s                 ; Yes                       ; Yes                       ;
+; DISPL_STATUS[3] ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.66e-08 V                   ; 2.65 V              ; -0.0115 V           ; 0.219 V                              ; 0.115 V                              ; 1.64e-09 s                  ; 1.57e-09 s                  ; No                         ; Yes                        ; 2.62 V                      ; 4.66e-08 V                  ; 2.65 V             ; -0.0115 V          ; 0.219 V                             ; 0.115 V                             ; 1.64e-09 s                 ; 1.57e-09 s                 ; No                        ; Yes                       ;
+; DISPL_STATUS[4] ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.66e-08 V                   ; 2.73 V              ; -0.0205 V           ; 0.17 V                               ; 0.027 V                              ; 2.58e-10 s                  ; 2.57e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.66e-08 V                  ; 2.73 V             ; -0.0205 V          ; 0.17 V                              ; 0.027 V                             ; 2.58e-10 s                 ; 2.57e-10 s                 ; Yes                       ; Yes                       ;
+; DISPL_STATUS[5] ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 3.16e-08 V                   ; 2.71 V              ; -0.0171 V           ; 0.273 V                              ; 0.065 V                              ; 4.95e-10 s                  ; 5.37e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 3.16e-08 V                  ; 2.71 V             ; -0.0171 V          ; 0.273 V                             ; 0.065 V                             ; 4.95e-10 s                 ; 5.37e-10 s                 ; No                        ; Yes                       ;
+; DISPL_STATUS[6] ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 3.16e-08 V                   ; 2.71 V              ; -0.0171 V           ; 0.273 V                              ; 0.065 V                              ; 4.95e-10 s                  ; 5.37e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 3.16e-08 V                  ; 2.71 V             ; -0.0171 V          ; 0.273 V                             ; 0.065 V                             ; 4.95e-10 s                 ; 5.37e-10 s                 ; No                        ; Yes                       ;
+; LEDS[0]         ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.66e-08 V                   ; 2.72 V              ; -0.0215 V           ; 0.161 V                              ; 0.061 V                              ; 4.44e-10 s                  ; 4.06e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 4.66e-08 V                  ; 2.72 V             ; -0.0215 V          ; 0.161 V                             ; 0.061 V                             ; 4.44e-10 s                 ; 4.06e-10 s                 ; No                        ; Yes                       ;
+; LEDS[1]         ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.66e-08 V                   ; 2.72 V              ; -0.0215 V           ; 0.161 V                              ; 0.061 V                              ; 4.44e-10 s                  ; 4.06e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 4.66e-08 V                  ; 2.72 V             ; -0.0215 V          ; 0.161 V                             ; 0.061 V                             ; 4.44e-10 s                 ; 4.06e-10 s                 ; No                        ; Yes                       ;
+; LEDS[2]         ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 3.16e-08 V                   ; 2.71 V              ; -0.0171 V           ; 0.273 V                              ; 0.065 V                              ; 4.95e-10 s                  ; 5.37e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 3.16e-08 V                  ; 2.71 V             ; -0.0171 V          ; 0.273 V                             ; 0.065 V                             ; 4.95e-10 s                 ; 5.37e-10 s                 ; No                        ; Yes                       ;
+; LEDS[3]         ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.66e-08 V                   ; 2.73 V              ; -0.0205 V           ; 0.17 V                               ; 0.027 V                              ; 2.58e-10 s                  ; 2.57e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.66e-08 V                  ; 2.73 V             ; -0.0205 V          ; 0.17 V                              ; 0.027 V                             ; 2.58e-10 s                 ; 2.57e-10 s                 ; Yes                       ; Yes                       ;
+; LEDS[4]         ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.66e-08 V                   ; 2.65 V              ; -0.0115 V           ; 0.219 V                              ; 0.115 V                              ; 1.64e-09 s                  ; 1.57e-09 s                  ; No                         ; Yes                        ; 2.62 V                      ; 4.66e-08 V                  ; 2.65 V             ; -0.0115 V          ; 0.219 V                             ; 0.115 V                             ; 1.64e-09 s                 ; 1.57e-09 s                 ; No                        ; Yes                       ;
+; LEDS[5]         ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.66e-08 V                   ; 2.72 V              ; -0.0215 V           ; 0.161 V                              ; 0.061 V                              ; 4.44e-10 s                  ; 4.06e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 4.66e-08 V                  ; 2.72 V             ; -0.0215 V          ; 0.161 V                             ; 0.061 V                             ; 4.44e-10 s                 ; 4.06e-10 s                 ; No                        ; Yes                       ;
+; LEDS[6]         ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.66e-08 V                   ; 2.72 V              ; -0.0215 V           ; 0.161 V                              ; 0.061 V                              ; 4.44e-10 s                  ; 4.06e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 4.66e-08 V                  ; 2.72 V             ; -0.0215 V          ; 0.161 V                             ; 0.061 V                             ; 4.44e-10 s                 ; 4.06e-10 s                 ; No                        ; Yes                       ;
+; LEDS[7]         ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 3.16e-08 V                   ; 2.71 V              ; -0.0171 V           ; 0.273 V                              ; 0.065 V                              ; 4.95e-10 s                  ; 5.37e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 3.16e-08 V                  ; 2.71 V             ; -0.0171 V          ; 0.273 V                             ; 0.065 V                             ; 4.95e-10 s                 ; 5.37e-10 s                 ; No                        ; Yes                       ;
+; ~ALTERA_NCEO~   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 3.06e-08 V                   ; 2.86 V              ; -0.0341 V           ; 0.364 V                              ; 0.046 V                              ; 1.17e-10 s                  ; 2.6e-10 s                   ; No                         ; Yes                        ; 2.62 V                      ; 3.06e-08 V                  ; 2.86 V             ; -0.0341 V          ; 0.364 V                             ; 0.046 V                             ; 1.17e-10 s                 ; 2.6e-10 s                  ; No                        ; Yes                       ;
+; ~ALTERA_DCLK~   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 3.81e-08 V                   ; 2.72 V              ; -0.0549 V           ; 0.144 V                              ; 0.088 V                              ; 2.55e-10 s                  ; 2.14e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 3.81e-08 V                  ; 2.72 V             ; -0.0549 V          ; 0.144 V                             ; 0.088 V                             ; 2.55e-10 s                 ; 2.14e-10 s                 ; Yes                       ; Yes                       ;
++-----------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Transfers                                                       ;
++-------------+-------------+----------+----------+----------+----------+
+; From Clock  ; To Clock    ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++-------------+-------------+----------+----------+----------+----------+
+; ENTR_HOR[0] ; CLOCK       ; 0        ; 4        ; 0        ; 0        ;
+; CLOCK       ; ENTR_HOR[0] ; 0        ; 0        ; 10       ; 0        ;
+; ENTR_HOR[0] ; ENTR_HOR[0] ; 0        ; 0        ; 3        ; 3        ;
++-------------+-------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-----------------------------------------------------------------------+
+; Hold Transfers                                                        ;
++-------------+-------------+----------+----------+----------+----------+
+; From Clock  ; To Clock    ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++-------------+-------------+----------+----------+----------+----------+
+; ENTR_HOR[0] ; CLOCK       ; 0        ; 4        ; 0        ; 0        ;
+; CLOCK       ; ENTR_HOR[0] ; 0        ; 0        ; 10       ; 0        ;
+; ENTR_HOR[0] ; ENTR_HOR[0] ; 0        ; 0        ; 3        ; 3        ;
++-------------+-------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No non-DPA dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 7     ; 7    ;
+; Unconstrained Input Port Paths  ; 23    ; 23   ;
+; Unconstrained Output Ports      ; 4     ; 4    ;
+; Unconstrained Output Port Paths ; 8     ; 8    ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 32-bit TimeQuest Timing Analyzer
+    Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+    Info: Processing started: Thu Jul  4 08:34:13 2024
+Info: Command: quartus_sta sistema_unificadov2 -c sistema_unificadov2
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21076): High junction temperature operating condition is not set. Assuming a default value of '85'.
+Info (21076): Low junction temperature operating condition is not set. Assuming a default value of '0'.
+Warning (335093): TimeQuest Timing Analyzer is analyzing 4 combinational loops as latches.
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'sistema_unificadov2.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name CLOCK CLOCK
+    Info (332105): create_clock -period 1.000 -name ENTR_HOR[0] ENTR_HOR[0]
+Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow 1200mV 85C Model
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
+Info (332146): Worst-case setup slack is -2.451
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -2.451              -9.474 CLOCK 
+    Info (332119):    -0.147              -0.262 ENTR_HOR[0] 
+Info (332146): Worst-case hold slack is -0.678
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -0.678              -2.230 ENTR_HOR[0] 
+    Info (332119):     2.807               0.000 CLOCK 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.000              -8.000 CLOCK 
+    Info (332119):    -3.000              -3.000 ENTR_HOR[0] 
+Info: Analyzing Slow 1200mV 0C Model
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
+Info (332146): Worst-case setup slack is -2.125
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -2.125              -8.177 CLOCK 
+    Info (332119):    -0.213              -0.382 ENTR_HOR[0] 
+Info (332146): Worst-case hold slack is -0.562
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -0.562              -1.847 ENTR_HOR[0] 
+    Info (332119):     2.544               0.000 CLOCK 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.000              -8.000 CLOCK 
+    Info (332119):    -3.000              -3.000 ENTR_HOR[0] 
+Info: Analyzing Fast 1200mV 0C Model
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
+Info (332146): Worst-case setup slack is -1.479
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -1.479              -5.749 CLOCK 
+    Info (332119):     0.492               0.000 ENTR_HOR[0] 
+Info (332146): Worst-case hold slack is -0.458
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -0.458              -1.742 ENTR_HOR[0] 
+    Info (332119):     2.086               0.000 CLOCK 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.000              -8.104 CLOCK 
+    Info (332119):    -3.000              -3.000 ENTR_HOR[0] 
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 32-bit TimeQuest Timing Analyzer was successful. 0 errors, 6 warnings
+    Info: Peak virtual memory: 398 megabytes
+    Info: Processing ended: Thu Jul  4 08:34:16 2024
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:03
+
+

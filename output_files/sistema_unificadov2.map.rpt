@@ -1,0 +1,677 @@
+Analysis & Synthesis report for sistema_unificadov2
+Thu Jul  4 08:33:59 2024
+Quartus II 32-bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |sistema_unificadov2|controladora:controladora_inst|estado_atual
+  9. User-Specified and Inferred Latches
+ 10. Registers Removed During Synthesis
+ 11. General Register Statistics
+ 12. Parameter Settings for User Entity Instance: datapath:datapath_inst|Register_a:reg8_LEDS
+ 13. Parameter Settings for User Entity Instance: datapath:datapath_inst|Register_a:reg8_SEN_LUM
+ 14. Parameter Settings for User Entity Instance: datapath:datapath_inst|Comparator5bits:comptime00
+ 15. Parameter Settings for User Entity Instance: datapath:datapath_inst|Comparator5bits:comptime07
+ 16. Parameter Settings for User Entity Instance: datapath:datapath_inst|Comparator5bits:comptime12
+ 17. Parameter Settings for User Entity Instance: datapath:datapath_inst|Comparator5bits:comptime18
+ 18. Parameter Settings for User Entity Instance: datapath:datapath_inst|Comparator5bits:comptime24
+ 19. Parameter Settings for User Entity Instance: datapath:datapath_inst|Comparator8bits:complum20
+ 20. Parameter Settings for User Entity Instance: datapath:datapath_inst|Comparator8bits:complum180
+ 21. Parameter Settings for User Entity Instance: datapath:datapath_inst|Comparator8bits:complum240
+ 22. Parameter Settings for User Entity Instance: datapath:datapath_inst|Register_a:reg_leds
+ 23. Parameter Settings for User Entity Instance: datapath:datapath_inst|incrementador:incrementer_leds
+ 24. Port Connectivity Checks: "datapath:datapath_inst|incrementador:incrementer_leds"
+ 25. Port Connectivity Checks: "datapath:datapath_inst|Comparator8bits:complum240"
+ 26. Port Connectivity Checks: "datapath:datapath_inst|Comparator8bits:complum180"
+ 27. Port Connectivity Checks: "datapath:datapath_inst|Comparator8bits:complum20"
+ 28. Port Connectivity Checks: "datapath:datapath_inst|Comparator5bits:comptime24"
+ 29. Port Connectivity Checks: "datapath:datapath_inst|Comparator5bits:comptime18"
+ 30. Port Connectivity Checks: "datapath:datapath_inst|Comparator5bits:comptime12"
+ 31. Port Connectivity Checks: "datapath:datapath_inst|Comparator5bits:comptime07"
+ 32. Port Connectivity Checks: "datapath:datapath_inst|Comparator5bits:comptime00"
+ 33. Port Connectivity Checks: "datapath:datapath_inst|Register_a:reg8_LEDS"
+ 34. Port Connectivity Checks: "datapath:datapath_inst"
+ 35. Elapsed Time Per Partition
+ 36. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++---------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                    ;
++------------------------------------+--------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Thu Jul  4 08:33:59 2024      ;
+; Quartus II 32-bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
+; Revision Name                      ; sistema_unificadov2                        ;
+; Top-level Entity Name              ; sistema_unificadov2                        ;
+; Family                             ; Cyclone IV GX                              ;
+; Total logic elements               ; 17                                         ;
+;     Total combinational functions  ; 16                                         ;
+;     Dedicated logic registers      ; 5                                          ;
+; Total registers                    ; 5                                          ;
+; Total pins                         ; 36                                         ;
+; Total virtual pins                 ; 0                                          ;
+; Total memory bits                  ; 0                                          ;
+; Embedded Multiplier 9-bit elements ; 0                                          ;
+; Total GXB Receiver Channel PCS     ; 0                                          ;
+; Total GXB Receiver Channel PMA     ; 0                                          ;
+; Total GXB Transmitter Channel PCS  ; 0                                          ;
+; Total GXB Transmitter Channel PMA  ; 0                                          ;
+; Total PLLs                         ; 0                                          ;
++------------------------------------+--------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                          ;
++----------------------------------------------------------------------------+---------------------+---------------------+
+; Option                                                                     ; Setting             ; Default Value       ;
++----------------------------------------------------------------------------+---------------------+---------------------+
+; Top-level entity name                                                      ; sistema_unificadov2 ; sistema_unificadov2 ;
+; Family name                                                                ; Cyclone IV GX       ; Cyclone IV GX       ;
+; Use smart compilation                                                      ; Off                 ; Off                 ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                  ; On                  ;
+; Enable compact report table                                                ; Off                 ; Off                 ;
+; Restructure Multiplexers                                                   ; Auto                ; Auto                ;
+; Create Debugging Nodes for IP Cores                                        ; Off                 ; Off                 ;
+; Preserve fewer node names                                                  ; On                  ; On                  ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                 ; Off                 ;
+; Verilog Version                                                            ; Verilog_2001        ; Verilog_2001        ;
+; VHDL Version                                                               ; VHDL_1993           ; VHDL_1993           ;
+; State Machine Processing                                                   ; Auto                ; Auto                ;
+; Safe State Machine                                                         ; Off                 ; Off                 ;
+; Extract Verilog State Machines                                             ; On                  ; On                  ;
+; Extract VHDL State Machines                                                ; On                  ; On                  ;
+; Ignore Verilog initial constructs                                          ; Off                 ; Off                 ;
+; Iteration limit for constant Verilog loops                                 ; 5000                ; 5000                ;
+; Iteration limit for non-constant Verilog loops                             ; 250                 ; 250                 ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                  ; On                  ;
+; Infer RAMs from Raw Logic                                                  ; On                  ; On                  ;
+; Parallel Synthesis                                                         ; On                  ; On                  ;
+; DSP Block Balancing                                                        ; Auto                ; Auto                ;
+; NOT Gate Push-Back                                                         ; On                  ; On                  ;
+; Power-Up Don't Care                                                        ; On                  ; On                  ;
+; Remove Redundant Logic Cells                                               ; Off                 ; Off                 ;
+; Remove Duplicate Registers                                                 ; On                  ; On                  ;
+; Ignore CARRY Buffers                                                       ; Off                 ; Off                 ;
+; Ignore CASCADE Buffers                                                     ; Off                 ; Off                 ;
+; Ignore GLOBAL Buffers                                                      ; Off                 ; Off                 ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                 ; Off                 ;
+; Ignore LCELL Buffers                                                       ; Off                 ; Off                 ;
+; Ignore SOFT Buffers                                                        ; On                  ; On                  ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                 ; Off                 ;
+; Optimization Technique                                                     ; Balanced            ; Balanced            ;
+; Carry Chain Length                                                         ; 70                  ; 70                  ;
+; Auto Carry Chains                                                          ; On                  ; On                  ;
+; Auto Open-Drain Pins                                                       ; On                  ; On                  ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                 ; Off                 ;
+; Auto ROM Replacement                                                       ; On                  ; On                  ;
+; Auto RAM Replacement                                                       ; On                  ; On                  ;
+; Auto DSP Block Replacement                                                 ; On                  ; On                  ;
+; Auto Shift Register Replacement                                            ; Auto                ; Auto                ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto                ; Auto                ;
+; Auto Clock Enable Replacement                                              ; On                  ; On                  ;
+; Strict RAM Replacement                                                     ; Off                 ; Off                 ;
+; Allow Synchronous Control Signals                                          ; On                  ; On                  ;
+; Force Use of Synchronous Clear Signals                                     ; Off                 ; Off                 ;
+; Auto RAM Block Balancing                                                   ; On                  ; On                  ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                 ; Off                 ;
+; Auto Resource Sharing                                                      ; Off                 ; Off                 ;
+; Allow Any RAM Size For Recognition                                         ; Off                 ; Off                 ;
+; Allow Any ROM Size For Recognition                                         ; Off                 ; Off                 ;
+; Allow Any Shift Register Size For Recognition                              ; Off                 ; Off                 ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                  ; On                  ;
+; Ignore translate_off and synthesis_off directives                          ; Off                 ; Off                 ;
+; Timing-Driven Synthesis                                                    ; On                  ; On                  ;
+; Report Parameter Settings                                                  ; On                  ; On                  ;
+; Report Source Assignments                                                  ; On                  ; On                  ;
+; Report Connectivity Checks                                                 ; On                  ; On                  ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                 ; Off                 ;
+; Synchronization Register Chain Length                                      ; 2                   ; 2                   ;
+; PowerPlay Power Optimization                                               ; Normal compilation  ; Normal compilation  ;
+; HDL message level                                                          ; Level2              ; Level2              ;
+; Suppress Register Optimization Related Messages                            ; Off                 ; Off                 ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000                ; 5000                ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000                ; 5000                ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                 ; 100                 ;
+; Clock MUX Protection                                                       ; On                  ; On                  ;
+; Auto Gated Clock Conversion                                                ; Off                 ; Off                 ;
+; Block Design Naming                                                        ; Auto                ; Auto                ;
+; SDC constraint protection                                                  ; Off                 ; Off                 ;
+; Synthesis Effort                                                           ; Auto                ; Auto                ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                  ; On                  ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                 ; Off                 ;
+; Analysis & Synthesis Message Level                                         ; Medium              ; Medium              ;
+; Disable Register Merging Across Hierarchies                                ; Auto                ; Auto                ;
+; Resource Aware Inference For Block RAM                                     ; On                  ; On                  ;
+; Synthesis Seed                                                             ; 1                   ; 1                   ;
++----------------------------------------------------------------------------+---------------------+---------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 8      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                       ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                ; Library ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------+---------+
+; sistema_unificadov2.vhd          ; yes             ; User VHDL File  ; /home/pedrocosme/Downloads/tp_DigitalSystemLab-main/sistema_unificadov2.vhd ;         ;
+; Comparator5bits.vhd              ; yes             ; User VHDL File  ; /home/pedrocosme/Downloads/tp_DigitalSystemLab-main/Comparator5bits.vhd     ;         ;
+; Comparator8bits.vhd              ; yes             ; User VHDL File  ; /home/pedrocosme/Downloads/tp_DigitalSystemLab-main/Comparator8bits.vhd     ;         ;
+; controladora.vhd                 ; yes             ; User VHDL File  ; /home/pedrocosme/Downloads/tp_DigitalSystemLab-main/controladora.vhd        ;         ;
+; datapath.vhd                     ; yes             ; User VHDL File  ; /home/pedrocosme/Downloads/tp_DigitalSystemLab-main/datapath.vhd            ;         ;
+; incrementador.vhd                ; yes             ; User VHDL File  ; /home/pedrocosme/Downloads/tp_DigitalSystemLab-main/incrementador.vhd       ;         ;
+; Register_a.vhd                   ; yes             ; User VHDL File  ; /home/pedrocosme/Downloads/tp_DigitalSystemLab-main/Register_a.vhd          ;         ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------+---------+
+
+
++-------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                         ;
++--------------------------+----------------------------------------------------------+
+; Resource                 ; Usage                                                    ;
++--------------------------+----------------------------------------------------------+
+; I/O pins                 ; 36                                                       ;
+; DSP block 9-bit elements ; 0                                                        ;
+; Maximum fan-out node     ; controladora:controladora_inst|estado_atual.MODO_NOTURNO ;
+; Maximum fan-out          ; 6                                                        ;
+; Total fan-out            ; 108                                                      ;
+; Average fan-out          ; 1.16                                                     ;
++--------------------------+----------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                              ;
++-------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+-----------------------------------------------------+--------------+
+; Compilation Hierarchy Node          ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name                                 ; Library Name ;
++-------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+-----------------------------------------------------+--------------+
+; |sistema_unificadov2                ; 16 (0)            ; 5 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 36   ; 0            ; |sistema_unificadov2                                ; work         ;
+;    |controladora:controladora_inst| ; 16 (16)           ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |sistema_unificadov2|controladora:controladora_inst ; work         ;
++-------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+-----------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |sistema_unificadov2|controladora:controladora_inst|estado_atual                                                                                                                                                                                                                  ;
++--------------------------------------+---------------------+---------------------------------+------------------------------+--------------------------+--------------------------------------+---------------------------+-------------------+-------------------------------+-------------------+
+; Name                                 ; estado_atual.MANUAL ; estado_atual.MEDIR_LUMINOSIDADE ; estado_atual.MANUTENCAO_ILUM ; estado_atual.AJUSTE_ILUM ; estado_atual.DESLIGAMENTO_AUTOMATICO ; estado_atual.MODO_NOTURNO ; estado_atual.ERRO ; estado_atual.DETECTA_PRESENCA ; estado_atual.INIT ;
++--------------------------------------+---------------------+---------------------------------+------------------------------+--------------------------+--------------------------------------+---------------------------+-------------------+-------------------------------+-------------------+
+; estado_atual.INIT                    ; 0                   ; 0                               ; 0                            ; 0                        ; 0                                    ; 0                         ; 0                 ; 0                             ; 0                 ;
+; estado_atual.DETECTA_PRESENCA        ; 0                   ; 0                               ; 0                            ; 0                        ; 0                                    ; 0                         ; 0                 ; 1                             ; 1                 ;
+; estado_atual.ERRO                    ; 0                   ; 0                               ; 0                            ; 0                        ; 0                                    ; 0                         ; 1                 ; 0                             ; 1                 ;
+; estado_atual.MODO_NOTURNO            ; 0                   ; 0                               ; 0                            ; 0                        ; 0                                    ; 1                         ; 0                 ; 0                             ; 1                 ;
+; estado_atual.DESLIGAMENTO_AUTOMATICO ; 0                   ; 0                               ; 0                            ; 0                        ; 1                                    ; 0                         ; 0                 ; 0                             ; 1                 ;
+; estado_atual.AJUSTE_ILUM             ; 0                   ; 0                               ; 0                            ; 1                        ; 0                                    ; 0                         ; 0                 ; 0                             ; 1                 ;
+; estado_atual.MANUTENCAO_ILUM         ; 0                   ; 0                               ; 1                            ; 0                        ; 0                                    ; 0                         ; 0                 ; 0                             ; 1                 ;
+; estado_atual.MEDIR_LUMINOSIDADE      ; 0                   ; 1                               ; 0                            ; 0                        ; 0                                    ; 0                         ; 0                 ; 0                             ; 1                 ;
+; estado_atual.MANUAL                  ; 1                   ; 0                               ; 0                            ; 0                        ; 0                                    ; 0                         ; 0                 ; 0                             ; 1                 ;
++--------------------------------------+---------------------+---------------------------------+------------------------------+--------------------------+--------------------------------------+---------------------------+-------------------+-------------------------------+-------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                                                    ;
++--------------------------------------------------------------------+------------------------------------------+------------------------+
+; Latch Name                                                         ; Latch Enable Signal                      ; Free of Timing Hazards ;
++--------------------------------------------------------------------+------------------------------------------+------------------------+
+; controladora:controladora_inst|proximo_estado.ERRO_594             ; controladora:controladora_inst|Selector0 ; yes                    ;
+; controladora:controladora_inst|proximo_estado.MANUAL_420           ; controladora:controladora_inst|Selector0 ; yes                    ;
+; controladora:controladora_inst|proximo_estado.MODO_NOTURNO_565     ; controladora:controladora_inst|Selector0 ; yes                    ;
+; controladora:controladora_inst|proximo_estado.DETECTA_PRESENCA_623 ; controladora:controladora_inst|Selector0 ; yes                    ;
+; Number of user-specified and inferred latches = 4                  ;                                          ;                        ;
++--------------------------------------------------------------------+------------------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                ;
++---------------------------------------------------------------------+---------------------------------------------+
+; Register name                                                       ; Reason for Removal                          ;
++---------------------------------------------------------------------+---------------------------------------------+
+; datapath:datapath_inst|Register_a:reg8_SEN_LUM|Q[0..7]              ; Stuck at GND due to stuck port clock_enable ;
+; controladora:controladora_inst|estado_atual.DESLIGAMENTO_AUTOMATICO ; Lost fanout                                 ;
+; controladora:controladora_inst|estado_atual.AJUSTE_ILUM             ; Lost fanout                                 ;
+; controladora:controladora_inst|estado_atual.MANUTENCAO_ILUM         ; Lost fanout                                 ;
+; controladora:controladora_inst|estado_atual.MEDIR_LUMINOSIDADE      ; Lost fanout                                 ;
+; Total Number of Removed Registers = 12                              ;                                             ;
++---------------------------------------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 5     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 5     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:datapath_inst|Register_a:reg8_LEDS ;
++----------------+-------+-----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                            ;
++----------------+-------+-----------------------------------------------------------------+
+; DATA_WIDTH     ; 8     ; Signed Integer                                                  ;
++----------------+-------+-----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:datapath_inst|Register_a:reg8_SEN_LUM ;
++----------------+-------+--------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                               ;
++----------------+-------+--------------------------------------------------------------------+
+; DATA_WIDTH     ; 8     ; Signed Integer                                                     ;
++----------------+-------+--------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:datapath_inst|Comparator5bits:comptime00 ;
++----------------+-------+-----------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                  ;
++----------------+-------+-----------------------------------------------------------------------+
+; DATA_WIDTH     ; 5     ; Signed Integer                                                        ;
++----------------+-------+-----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:datapath_inst|Comparator5bits:comptime07 ;
++----------------+-------+-----------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                  ;
++----------------+-------+-----------------------------------------------------------------------+
+; DATA_WIDTH     ; 5     ; Signed Integer                                                        ;
++----------------+-------+-----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:datapath_inst|Comparator5bits:comptime12 ;
++----------------+-------+-----------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                  ;
++----------------+-------+-----------------------------------------------------------------------+
+; DATA_WIDTH     ; 5     ; Signed Integer                                                        ;
++----------------+-------+-----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:datapath_inst|Comparator5bits:comptime18 ;
++----------------+-------+-----------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                  ;
++----------------+-------+-----------------------------------------------------------------------+
+; DATA_WIDTH     ; 5     ; Signed Integer                                                        ;
++----------------+-------+-----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:datapath_inst|Comparator5bits:comptime24 ;
++----------------+-------+-----------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                  ;
++----------------+-------+-----------------------------------------------------------------------+
+; DATA_WIDTH     ; 5     ; Signed Integer                                                        ;
++----------------+-------+-----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:datapath_inst|Comparator8bits:complum20 ;
++----------------+-------+----------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                 ;
++----------------+-------+----------------------------------------------------------------------+
+; DATA_WIDTH     ; 8     ; Signed Integer                                                       ;
++----------------+-------+----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:datapath_inst|Comparator8bits:complum180 ;
++----------------+-------+-----------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                  ;
++----------------+-------+-----------------------------------------------------------------------+
+; DATA_WIDTH     ; 8     ; Signed Integer                                                        ;
++----------------+-------+-----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:datapath_inst|Comparator8bits:complum240 ;
++----------------+-------+-----------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                  ;
++----------------+-------+-----------------------------------------------------------------------+
+; DATA_WIDTH     ; 8     ; Signed Integer                                                        ;
++----------------+-------+-----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:datapath_inst|Register_a:reg_leds ;
++----------------+-------+----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                           ;
++----------------+-------+----------------------------------------------------------------+
+; DATA_WIDTH     ; 8     ; Signed Integer                                                 ;
++----------------+-------+----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath:datapath_inst|incrementador:incrementer_leds ;
++----------------+-------+---------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                      ;
++----------------+-------+---------------------------------------------------------------------------+
+; DATA_WIDTH     ; 8     ; Signed Integer                                                            ;
++----------------+-------+---------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "datapath:datapath_inst|incrementador:incrementer_leds"                               ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; c_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "datapath:datapath_inst|Comparator8bits:complum240"                                     ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; b[7..4] ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; b[3..0] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; eq      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; gt      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "datapath:datapath_inst|Comparator8bits:complum180"                                     ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; b[5..4] ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; b[1..0] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; b[7]    ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; b[6]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; b[3]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; b[2]    ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; eq      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "datapath:datapath_inst|Comparator8bits:complum20"                                      ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; b[3..1] ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; b[7..4] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; b[0]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; eq      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; lt      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "datapath:datapath_inst|Comparator5bits:comptime24"                                     ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; b[4..3] ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; b[2..0] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; eq      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "datapath:datapath_inst|Comparator5bits:comptime18"                                     ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; b[3..2] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; b[4]    ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; b[1]    ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; b[0]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; eq      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "datapath:datapath_inst|Comparator5bits:comptime12"                                     ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; b[3..2] ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; b[1..0] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; b[4]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; eq      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "datapath:datapath_inst|Comparator5bits:comptime07"                                     ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; b[2..0] ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; b[4..3] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; eq      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "datapath:datapath_inst|Comparator5bits:comptime00"                                  ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; b    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; eq   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "datapath:datapath_inst|Register_a:reg8_LEDS"                                        ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; q    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "datapath:datapath_inst"                                                                                                                                      ;
++----------------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port                 ; Type   ; Severity ; Details                                                                                                                                      ;
++----------------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; time_zero            ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
+; time_seven[2..0]     ; Input  ; Info     ; Stuck at VCC                                                                                                                                 ;
+; time_seven[5..3]     ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
+; time_twelve[3..2]    ; Input  ; Info     ; Stuck at VCC                                                                                                                                 ;
+; time_twelve[5..4]    ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
+; time_twelve[1..0]    ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
+; time_eigthteen[3..2] ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
+; time_eigthteen[5]    ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
+; time_eigthteen[4]    ; Input  ; Info     ; Stuck at VCC                                                                                                                                 ;
+; time_eigthteen[1]    ; Input  ; Info     ; Stuck at VCC                                                                                                                                 ;
+; time_eigthteen[0]    ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
+; c_in                 ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
+; leds_on              ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; incr_leds            ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; leds_out             ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
++----------------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 32-bit Analysis & Synthesis
+    Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+    Info: Processing started: Thu Jul  4 08:33:57 2024
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off sistema_unificadov2 -c sistema_unificadov2
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 2 design units, including 1 entities, in source file sistema_unificadov2.vhd
+    Info (12022): Found design unit 1: sistema_unificadov2-rtl
+    Info (12023): Found entity 1: sistema_unificadov2
+Info (12021): Found 2 design units, including 1 entities, in source file bcd.vhd
+    Info (12022): Found design unit 1: bcd-behavior
+    Info (12023): Found entity 1: bcd
+Info (12021): Found 2 design units, including 1 entities, in source file bcd_tb.vhd
+    Info (12022): Found design unit 1: bcd_tb-behavior
+    Info (12023): Found entity 1: bcd_tb
+Info (12021): Found 2 design units, including 1 entities, in source file Comparator5bits.vhd
+    Info (12022): Found design unit 1: Comparator5bits-Behavior
+    Info (12023): Found entity 1: Comparator5bits
+Info (12021): Found 2 design units, including 1 entities, in source file Comparator8bits.vhd
+    Info (12022): Found design unit 1: Comparator8bits-Behavior
+    Info (12023): Found entity 1: Comparator8bits
+Info (12021): Found 2 design units, including 1 entities, in source file Comparator_tb.vhd
+    Info (12022): Found design unit 1: Comparator_tb-behavioral
+    Info (12023): Found entity 1: Comparator_tb
+Info (12021): Found 2 design units, including 1 entities, in source file controladora.vhd
+    Info (12022): Found design unit 1: controladora-RTL
+    Info (12023): Found entity 1: controladora
+Info (12021): Found 2 design units, including 1 entities, in source file datapath.vhd
+    Info (12022): Found design unit 1: datapath-rtl
+    Info (12023): Found entity 1: datapath
+Info (12021): Found 2 design units, including 1 entities, in source file incrementador.vhd
+    Info (12022): Found design unit 1: incrementador-rtl
+    Info (12023): Found entity 1: incrementador
+Info (12021): Found 2 design units, including 1 entities, in source file incrementador_tb.vhd
+    Info (12022): Found design unit 1: incrementador_tb-behavior
+    Info (12023): Found entity 1: incrementador_tb
+Info (12021): Found 2 design units, including 1 entities, in source file Register_a.vhd
+    Info (12022): Found design unit 1: Register_a-RTL
+    Info (12023): Found entity 1: Register_a
+Info (12021): Found 2 design units, including 1 entities, in source file Register_a_tb.vhd
+    Info (12022): Found design unit 1: Register_a_tb-teste
+    Info (12023): Found entity 1: Register_a_tb
+Info (12127): Elaborating entity "sistema_unificadov2" for the top level hierarchy
+Warning (10541): VHDL Signal Declaration warning at sistema_unificadov2.vhd(82): used implicit default value for signal "LEDS_IN" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at sistema_unificadov2.vhd(84): used implicit default value for signal "L240UP" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Info (12128): Elaborating entity "datapath" for hierarchy "datapath:datapath_inst"
+Warning (10541): VHDL Signal Declaration warning at datapath.vhd(18): used implicit default value for signal "LEDS" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at datapath.vhd(37): used implicit default value for signal "L180DOWN" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10036): Verilog HDL or VHDL warning at datapath.vhd(95): object "LED_REG_OUT" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at datapath.vhd(96): object "EQ" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at datapath.vhd(96): object "LT" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at datapath.vhd(96): object "GT" assigned a value but never read
+Warning (10540): VHDL Signal Declaration warning at datapath.vhd(99): used explicit default value for signal "select_leds_output" because signal was never assigned a value
+Info (12128): Elaborating entity "Register_a" for hierarchy "datapath:datapath_inst|Register_a:reg8_LEDS"
+Info (12128): Elaborating entity "Comparator5bits" for hierarchy "datapath:datapath_inst|Comparator5bits:comptime00"
+Info (12128): Elaborating entity "Comparator8bits" for hierarchy "datapath:datapath_inst|Comparator8bits:complum20"
+Info (12128): Elaborating entity "incrementador" for hierarchy "datapath:datapath_inst|incrementador:incrementer_leds"
+Info (12128): Elaborating entity "controladora" for hierarchy "controladora:controladora_inst"
+Warning (10631): VHDL Process Statement warning at controladora.vhd(49): inferring latch(es) for signal or variable "INCR_LEDS", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at controladora.vhd(49): inferring latch(es) for signal or variable "proximo_estado", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "proximo_estado.MANUAL" at controladora.vhd(49)
+Info (10041): Inferred latch for "proximo_estado.MEDIR_LUMINOSIDADE" at controladora.vhd(49)
+Info (10041): Inferred latch for "proximo_estado.MANUTENCAO_ILUM" at controladora.vhd(49)
+Info (10041): Inferred latch for "proximo_estado.AJUSTE_ILUM" at controladora.vhd(49)
+Info (10041): Inferred latch for "proximo_estado.DESLIGAMENTO_AUTOMATICO" at controladora.vhd(49)
+Info (10041): Inferred latch for "proximo_estado.MODO_NOTURNO" at controladora.vhd(49)
+Info (10041): Inferred latch for "proximo_estado.ERRO" at controladora.vhd(49)
+Info (10041): Inferred latch for "proximo_estado.DETECTA_PRESENCA" at controladora.vhd(49)
+Info (10041): Inferred latch for "proximo_estado.INIT" at controladora.vhd(49)
+Info (10041): Inferred latch for "INCR_LEDS" at controladora.vhd(49)
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13012): Latch controladora:controladora_inst|proximo_estado.ERRO_594 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal INT_MAN
+Warning (13012): Latch controladora:controladora_inst|proximo_estado.MANUAL_420 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controladora:controladora_inst|estado_atual.MODO_NOTURNO
+Warning (13012): Latch controladora:controladora_inst|proximo_estado.MODO_NOTURNO_565 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal INT_MAN
+Warning (13012): Latch controladora:controladora_inst|proximo_estado.DETECTA_PRESENCA_623 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal controladora:controladora_inst|estado_atual.MODO_NOTURNO
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "ILUM_NAT" is stuck at GND
+    Warning (13410): Pin "DISPL_STATUS[1]" is stuck at GND
+    Warning (13410): Pin "DISPL_STATUS[4]" is stuck at GND
+    Warning (13410): Pin "DISPL_STATUS[5]" is stuck at GND
+    Warning (13410): Pin "DISPL_STATUS[6]" is stuck at GND
+    Warning (13410): Pin "LEDS[0]" is stuck at GND
+    Warning (13410): Pin "LEDS[1]" is stuck at GND
+    Warning (13410): Pin "LEDS[2]" is stuck at GND
+    Warning (13410): Pin "LEDS[3]" is stuck at GND
+    Warning (13410): Pin "LEDS[4]" is stuck at GND
+    Warning (13410): Pin "LEDS[5]" is stuck at GND
+    Warning (13410): Pin "LEDS[6]" is stuck at GND
+    Warning (13410): Pin "LEDS[7]" is stuck at GND
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 4 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 10 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "TIMER"
+    Warning (15610): No output dependent on input pin "SEN_LUM[0]"
+    Warning (15610): No output dependent on input pin "SEN_LUM[1]"
+    Warning (15610): No output dependent on input pin "SEN_LUM[2]"
+    Warning (15610): No output dependent on input pin "SEN_LUM[3]"
+    Warning (15610): No output dependent on input pin "SEN_LUM[4]"
+    Warning (15610): No output dependent on input pin "SEN_LUM[5]"
+    Warning (15610): No output dependent on input pin "SEN_LUM[6]"
+    Warning (15610): No output dependent on input pin "SEN_LUM[7]"
+    Warning (15610): No output dependent on input pin "ENTR_HOR[5]"
+Info (21057): Implemented 57 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 19 input pins
+    Info (21059): Implemented 17 output pins
+    Info (21061): Implemented 21 logic cells
+Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 46 warnings
+    Info: Peak virtual memory: 427 megabytes
+    Info: Processing ended: Thu Jul  4 08:33:59 2024
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
+
+

@@ -1,25 +1,29 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
-entity sistema_unificadov2 is
+entity sistema_unificado is
+    -- Aqui você define todos os sinais externos que precisa
     Port (
-        CLOCK       : in  STD_LOGIC;
-        CLR         : in  STD_LOGIC;
-        --controladora
-        INT_MAN     : in  STD_LOGIC;
-        SEN_PRE     : in  STD_LOGIC;
-        ALERTA      : out STD_LOGIC;
-        ILUM_NAT    : out STD_LOGIC;
-        DISPL_STATUS: out STD_LOGIC_VECTOR(6 downto 0);
-        --datapath
-        TIMER       : in  STD_LOGIC;
+	 
+		CLOCK       : in  STD_LOGIC;
+		CLR         : in  STD_LOGIC;
+	 --controladora
+		INT_MAN     : in  STD_LOGIC;
+		SEN_PRE     : in  STD_LOGIC;
+		ALERTA      : out STD_LOGIC;
+      ILUM_NAT    : out STD_LOGIC;
+      DISPL_STATUS: out STD_LOGIC_VECTOR(6 downto 0);
+	 
+	 --datapath
+       
+        TIMER       : in  STD_LOGIC; --ver onde tá usando
         SEN_LUM     : in  STD_LOGIC_VECTOR(7 downto 0);
         ENTR_HOR    : in  STD_LOGIC_VECTOR(5 downto 0);
-        LEDS        : out STD_LOGIC_VECTOR(7 downto 0)
+        LEDS_OUT    : out STD_LOGIC_VECTOR(7 downto 0)
     );
-end sistema_unificadov2;
+end sistema_unificado;
 
-architecture rtl of sistema_unificadov2 is
+architecture rtl of sistema_unificado is
 
     -- Instâncias dos componentes datapath e controladora
     component datapath
@@ -28,14 +32,14 @@ architecture rtl of sistema_unificadov2 is
             TIMER       : in  STD_LOGIC;
             RESET_SIGNAL: in  STD_LOGIC;
             LOAD_SIGNAL : in  STD_LOGIC;
-            INCR_LED    : in  STD_LOGIC;
+            INCR_LED   : in  STD_LOGIC;
             LEDS        : out STD_LOGIC_VECTOR(7 downto 0);
             ENTR_HOR    : in  STD_LOGIC_VECTOR(5 downto 0);
             TIME_ZERO   : in  STD_LOGIC_VECTOR(5 downto 0);
             H0UP        : out STD_LOGIC;
             TIME_SEVEN  : in  STD_LOGIC_VECTOR(5 downto 0);
-            H7DOWN      : out STD_LOGIC;
-            H7UP        : out STD_LOGIC;
+            H0DOWN      : out STD_LOGIC;
+            HOUP        : out STD_LOGIC;
             TIME_TWELVE : in  STD_LOGIC_VECTOR(5 downto 0);
             H18DOWN     : out STD_LOGIC;
             H18UP       : out STD_LOGIC;
@@ -48,6 +52,7 @@ architecture rtl of sistema_unificadov2 is
             L180UP      : out STD_LOGIC;
             L240DOWN    : out STD_LOGIC;
             LEDS_IN     : in  STD_LOGIC_VECTOR(7 downto 0);
+            LEDS_OUT    : out STD_LOGIC_VECTOR(7 downto 0);
             C_IN        : in  STD_LOGIC
         );
     end component;
@@ -80,39 +85,41 @@ architecture rtl of sistema_unificadov2 is
     -- Sinais internos para conectar componentes
     signal INCR_LEDS   : STD_LOGIC;
     signal LEDS_IN     : STD_LOGIC_VECTOR(7 downto 0);
-    signal H0UP, H7UP, H7DOWN, H18DOWN, H18UP, H24DOWN, H24UP : STD_LOGIC;
+    signal LEDS        : STD_LOGIC_VECTOR(7 downto 0);
+    signal H0DOWN, H0UP, H7UP, H7DOWN, H18DOWN, H18UP, H24DOWN, H24UP : STD_LOGIC;
     signal L20UP, L180DOWN, L180UP, L240DOWN, L240UP : STD_LOGIC;
 
 begin
 
-    -- Instância do datapath
-    datapath_inst: datapath port map(
-        CLOCK       => CLOCK,
-        TIMER       => TIMER,
-        RESET_SIGNAL=> CLR,
-        LOAD_SIGNAL => CLR, -- Assuming CLR is also the load signal
-        INCR_LED    => INCR_LEDS,
-        LEDS        => LEDS, -- Directly connect LEDS
-        ENTR_HOR    => ENTR_HOR,
-        TIME_ZERO   => "000000", -- Adjust based on system logic as necessary
-        H7UP        => H7UP,
-        TIME_SEVEN  => "000111", -- Adjust as necessary
-        H7DOWN      => H7DOWN,
-        H0UP        => H0UP,
-        TIME_TWELVE => "001100", -- Adjust as necessary
-        H18DOWN     => H18DOWN,
-        H18UP       => H18UP,
-        TIME_EIGTHTEEN => "010010", -- Adjust as necessary
-        H24DOWN     => H24DOWN,
-        H24UP       => H24UP,
-        SEN_LUM     => SEN_LUM,
-        L20UP       => L20UP,
-        L180DOWN    => L180DOWN,
-        L180UP      => L180UP,
-        L240DOWN    => L240DOWN,
-        LEDS_IN     => LEDS_IN,
-        C_IN        => '0' -- Adjust as necessary
-    );
+-- Instance of the datapath
+datapath_inst: datapath port map(
+    CLOCK       => CLOCK,
+    TIMER       => TIMER,
+    RESET_SIGNAL=> CLR,
+    LOAD_SIGNAL => CLR, -- Assuming CLR is also the load signal
+    INCR_LED    => INCR_LEDS, -- Correcting the typo here
+    LEDS        => LEDS,
+    ENTR_HOR    => ENTR_HOR,
+    TIME_ZERO   => "000000", -- Adjust based on system logic as necessary
+    H0UP        => H0UP,
+    TIME_SEVEN  => "000111", -- Adjust as necessary
+    H0DOWN      => H0DOWN,
+    HOUP        => H7UP,
+    TIME_TWELVE => "001100", -- Adjust as necessary
+    H18DOWN     => H18DOWN,
+    H18UP       => H18UP,
+    TIME_EIGTHTEEN => "010010", -- Adjust as necessary
+    H24DOWN     => H24DOWN,
+    H24UP       => H24UP,
+    SEN_LUM     => SEN_LUM,
+    L20UP       => L20UP,
+    L180DOWN    => L180DOWN,
+    L180UP      => L180UP,
+    L240DOWN    => L240DOWN,
+    LEDS_IN     => LEDS_IN,
+    LEDS_OUT    => LEDS_OUT,
+    C_IN        => '0' -- Adjust as necessary
+);
 
     -- Instância da controladora
     controladora_inst: controladora port map(
@@ -131,11 +138,14 @@ begin
         L180DOWN => L180DOWN,
         L180UP => L180UP,
         L240DOWN => L240DOWN,
-        L240UP => L240UP, -- Connect L240UP to the controladora component
+        L240UP => L240UP,
         ALERTA => ALERTA,
         ILUM_NAT => ILUM_NAT,
         DISPL_STATUS => DISPL_STATUS,
         INCR_LEDS => INCR_LEDS
     );
+
+    -- Conexão das saídas para o exterior
+    LEDS_OUT <= LEDS;
 
 end rtl;

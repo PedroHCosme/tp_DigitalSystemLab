@@ -1,6 +1,6 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-use IEEE.NUMERIC_STD;
+use IEEE.STD_NUMERIC.ALL;
 
 entity datapath is
     Port (
@@ -57,14 +57,14 @@ architecture rtl of datapath is
 			SYNC_LOAD : in std_logic; -- load
 			Q: out std_logic_vector(7 downto 0) --register out
         );
-        end component;
+        end reg8;
     
         component incrementer is
             port(
                 C_IN  : in  std_logic_vector(7 downto 0);  -- Input signal
                 C_OUT : out std_logic_vector(7 downto 0)   -- Output signal
             );
-            end component;
+            end incrementer;
         
         component comparator8bits is
             port(
@@ -74,7 +74,7 @@ architecture rtl of datapath is
                 GT : out std_logic;  -- Output signal
                 LT : out std_logic   -- Output signal
             );
-            end component;
+            end comparator8bits;
         
         component comparator5bits is
             port(
@@ -84,17 +84,17 @@ architecture rtl of datapath is
                 GT : out std_logic;  -- Output signal
                 LT : out std_logic   -- Output signal
             );
-            end component;
+            end comparator5bits;
         
         component bcd is 
             port (
                 C_IN: in std_logic_vector(3 downto 0);
                 C_OUT: out std_logic_vector(6 downto 0)
             );
-            end component;
+            end bcd;
         
         signal SEN_LUM_REG_OUT, LED_REG_OUT : STD_LOGIC_VECTOR(7 downto 0);
-        signal EQ, LT, GT : STD_LOGIC;
+        
         begin
             reg8_LEDS: reg8 port map(
                 CLOCK => CLOCK,
@@ -111,35 +111,35 @@ architecture rtl of datapath is
                 Q => SEN_LUM_REG_OUT
             );
             comptime00 : comparator5bits port map(
-                A => ENTR_HOR(4 downto 0),
+                A => ENTR_HOR(5 downto 0),
                 B => "00000",
                 EQ => EQ,
                 GT => H7UP,
                 LT => H7DOWN
             );
             comptime07 : comparator5bits port map(
-                A => ENTR_HOR(4 downto 0),
+                A => ENTR_HOR(5 downto 0),
                 B => "00111",
                 EQ => EQ,
                 GT => H0UP,
                 LT => H7DOWN
             );
             comptime12 : comparator5bits port map(
-                A => ENTR_HOR(4 downto 0),
+                A => ENTR_HOR(5 downto 0),
                 B => "01100",
                 EQ => EQ,
                 GT => H18UP,
                 LT => H18DOWN
             );
             comptime18 : comparator5bits port map(
-                A => ENTR_HOR(4 downto 0),
+                A => ENTR_HOR(5 downto 0),
                 B => "10010",
                 EQ => EQ,
                 GT => H24UP,
                 LT => H24DOWN
             );
             comptime24: comparator5bits port map(
-                A => ENTR_HOR(4 downto 0),
+                A => ENTR_HOR(5 downto 0),
                 B => "11000",
                 EQ => EQ,
                 GT => H24UP,
