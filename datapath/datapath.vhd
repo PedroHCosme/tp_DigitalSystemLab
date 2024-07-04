@@ -20,10 +20,10 @@ entity datapath is
         -- Time Comparison Signals
         ENTR_HOR    : in  STD_LOGIC_VECTOR(5 downto 0); -- Enter time
         TIME_ZERO   : in  STD_LOGIC_VECTOR(5 downto 0); -- Time 00
-        H0UP        : out STD_LOGIC; -- Greater than 00
+        H7UP        : out STD_LOGIC; -- Greater than 00
         TIME_SEVEN  : in  STD_LOGIC_VECTOR(5 downto 0); -- Time 07
-        H0DOWN      : out STD_LOGIC; -- Less than 07
-        HOUP        : out STD_LOGIC; -- Greater than 07
+        H7DOWN      : out STD_LOGIC; -- Less than 07
+        H0UP        : out STD_LOGIC; -- Greater than 07
         TIME_TWELVE : in  STD_LOGIC_VECTOR(5 downto 0); -- Time 12
         H18DOWN     : out STD_LOGIC; -- Less than 12
         H18UP       : out STD_LOGIC; -- Greater than 12
@@ -114,15 +114,15 @@ architecture rtl of datapath is
                 A => ENTR_HOR(5 downto 0),
                 B => "00000",
                 EQ => EQ,
-                GT => H0UP,
-                LT => H0DOWN
+                GT => H7UP,
+                LT => H7DOWN
             );
             comptime07 : comparator5bits port map(
                 A => ENTR_HOR(5 downto 0),
                 B => "00111",
                 EQ => EQ,
-                GT => HOUP,
-                LT => H0DOWN
+                GT => H0UP,
+                LT => H7DOWN
             );
             comptime12 : comparator5bits port map(
                 A => ENTR_HOR(5 downto 0),
@@ -177,5 +177,4 @@ architecture rtl of datapath is
                 C_IN => INCR_LEDS,
                 C_OUT => LEDS_OUT
             );
-
 end rtl ; -- rtl
