@@ -91,36 +91,35 @@ architecture rtl of sistema_unificado is
 
 begin
 
-    -- Instância do datapath
-    datapath_inst: datapath port map(
-        CLOCK => CLOCK,
-        TIMER => TIMER,
-        RESET_SIGNAL => CLR,
-        LOAD_SIGNAL => CLR, -- Assumindo CLR como sinal de load também
-        INCR_LED => INCR_LEDS,
-        LEDS => LEDS,
-        ENTR_HOR => ENTR_HOR,
-        TIME_ZERO => "000000",  -- Pode precisar ajustar baseado na lógica do sistema
-        H0UP => H0UP,
-        TIME_SEVEN => "000111", -- Pode precisar ajustar
-        H0DOWN => H0DOWN,
-        HOUP => H7UP,
-        TIME_TWELVE => "001100", -- Pode precisar ajustar
-        H18DOWN => H18DOWN,
-        H18UP => H18UP,
-        TIME_EIGTHTEEN => "010010", -- Pode precisar ajustar
-        H24DOWN => H24DOWN,
-        H24UP => H24UP,
-        SEN_LUM => SEN_LUM,
-        L20UP => L20UP,
-        L180DOWN => L180DOWN,
-        L180UP => L180UP,
-        L240DOWN => L240DOWN,
-        INCR_LEDS => INCR_LED,
-        LEDS_IN => LEDS_IN,
-        LEDS_OUT => LEDS_OUT,
-        C_IN => '0' -- Ajuste conforme necessário
-    );
+-- Instance of the datapath
+datapath_inst: datapath port map(
+    CLOCK       => CLOCK,
+    TIMER       => TIMER,
+    RESET_SIGNAL=> CLR,
+    LOAD_SIGNAL => CLR, -- Assuming CLR is also the load signal
+    INCR_LED    => INCR_LEDS, -- Correcting the typo here
+    LEDS        => LEDS,
+    ENTR_HOR    => ENTR_HOR,
+    TIME_ZERO   => "000000", -- Adjust based on system logic as necessary
+    H0UP        => H0UP,
+    TIME_SEVEN  => "000111", -- Adjust as necessary
+    H0DOWN      => H0DOWN,
+    HOUP        => H7UP,
+    TIME_TWELVE => "001100", -- Adjust as necessary
+    H18DOWN     => H18DOWN,
+    H18UP       => H18UP,
+    TIME_EIGTHTEEN => "010010", -- Adjust as necessary
+    H24DOWN     => H24DOWN,
+    H24UP       => H24UP,
+    SEN_LUM     => SEN_LUM,
+    L20UP       => L20UP,
+    L180DOWN    => L180DOWN,
+    L180UP      => L180UP,
+    L240DOWN    => L240DOWN,
+    LEDS_IN     => LEDS_IN,
+    LEDS_OUT    => LEDS_OUT,
+    C_IN        => '0' -- Adjust as necessary
+);
 
     -- Instância da controladora
     controladora_inst: controladora port map(
